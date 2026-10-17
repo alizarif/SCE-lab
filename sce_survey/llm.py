@@ -19,9 +19,14 @@ class LLM:
         self.cfg = cfg
         self.dry_run = dry_run
         self.base = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1").rstrip("/")
-        self.key = os.environ.get("OPENROUTER_API_KEY", "")
+        self.key = os.environ.get("OPENROUTER_API_KEY", "").strip().strip('"').strip("'").strip()
+        if self.key.lower().startswith("bearer "):
+            self.key = self.key[7:].strip()
         if not dry_run and not self.key:
             raise Fatal("OPENROUTER_API_KEY is not set (GitHub: Settings → Secrets → Actions; local: .env file)")
+        if not dry_run and not self.key.startswith("sk-or-"):
+            raise Fatal(f"OPENROUTER_API_KEY does not look like an OpenRouter key: it should start with 'sk-or-' "
+                        f"(it starts with {self.key[:3]!r} and is {len(self.key)} characters long). Re-enter the secret.")
         self.client = None if dry_run else httpx.AsyncClient(timeout=httpx.Timeout(180, connect=30))
         self.consecutive_errors = 0
 
