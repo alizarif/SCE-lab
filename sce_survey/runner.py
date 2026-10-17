@@ -29,7 +29,8 @@ def due_today(cfg, people, run_date, arms=None):
     done = done_keys()
     arms = arms or cfg["arms"]
     todo = [(d, a["id"], u) for u, d in plan.items() if d <= run_date for a in arms if (u, a["id"], wave) not in done]
-    return sorted(todo), plan
+    order = {a["id"]: i for i, a in enumerate(arms)}
+    return sorted(todo, key=lambda t: (t[0], t[2], order[t[1]])), plan     # each person's four arms together
 
 
 def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
