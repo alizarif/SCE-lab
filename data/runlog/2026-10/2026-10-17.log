@@ -1,0 +1,6 @@
+2026-10-17 19:22:03 INFO === SCE monthly survey · run date 2026-10-17 · model openai/gpt-6-luna ===
+2026-10-17 19:22:04 INFO wave 2026-10 · 1200 participants · 80 scheduled today · 4 arms · 320 interviews to do (0 left over from earlier days)
+2026-10-17 19:22:04 INFO --limit 4: running only 4 interviews
+2026-10-17 19:22:04 INFO memory loaded for 0 person-arm pairs (summary mode)
+2026-10-17 19:22:04 ERROR STOPPED: OpenRouter refused the request (HTTP 401): {"error":{"message":"Missing Authentication header","code":401}}
+2026-10-17 19:22:04 INFO finished: 0 interviews done, 0 failed, 0 postponed to the next run · 0 question errors · cost $0.0000 · 0.0 min
