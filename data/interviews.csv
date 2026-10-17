@@ -1,0 +1,5 @@
+interview_id,userid,arm,web,memory,wave,scheduled_date,run_date,started_utc,finished_utc,respondent_type,status,n_questions,n_answered,n_errors,n_reasks,n_calls,prompt_tokens,completion_tokens,cost_usd,web_results,memory_waves,model,temperature
+2026-10_A_noweb_nomemory_70066882,70066882,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:39Z,new,complete,27,27,0,0,27,81614,664,0.001701,0,,openai/gpt-6-luna,
+2026-10_A_noweb_nomemory_70069994,70069994,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:46Z,new,complete,29,29,0,0,29,89780,830,0.001881,0,,openai/gpt-6-luna,
+2026-10_A_noweb_nomemory_70071878,70071878,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:46Z,new,complete,35,35,0,0,35,123599,655,0.002224,0,,openai/gpt-6-luna,
+2026-10_A_noweb_nomemory_70070990,70070990,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:47Z,new,complete,35,35,0,0,35,123700,738,0.002266,0,,openai/gpt-6-luna,
