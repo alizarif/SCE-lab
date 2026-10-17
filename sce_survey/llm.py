@@ -22,6 +22,8 @@ class LLM:
         self.key = os.environ.get("OPENROUTER_API_KEY", "").strip().strip('"').strip("'").strip()
         if self.key.lower().startswith("bearer "):
             self.key = self.key[7:].strip()
+        if re.fullmatch(r"[0-9a-f]{64}", self.key):          # pasted without its "sk-or-v1-" prefix
+            self.key = "sk-or-v1-" + self.key
         if not dry_run and not self.key:
             raise Fatal("OPENROUTER_API_KEY is not set (GitHub: Settings → Secrets → Actions; local: .env file)")
         if not dry_run and not self.key.startswith("sk-or-"):

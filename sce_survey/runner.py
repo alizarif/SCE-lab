@@ -77,7 +77,11 @@ def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
     rtype = cfg.get("respondent_type", "auto")
 
     async def main():
-        llm = LLM(cfg, dry_run=dry_run)
+        try:
+            llm = LLM(cfg, dry_run=dry_run)
+        except Fatal as e:
+            log.error("STOPPED: %s", e)
+            return 1
         ctx = {"cfg": cfg, "qn": qn, "llm": llm}
         sem = asyncio.Semaphore(int(cfg.get("concurrency", 8)))
         t0 = time.monotonic()
