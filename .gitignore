@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+~$*.xlsx
+data_dry_run/
+reports_dry_run/
+.did_work

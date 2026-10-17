@@ -1,0 +1,205 @@
+userid,severity,check,detail
+70069240,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70071878,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70073758,warning,consistency,spouse/partner in the household list but Q38 = No
+70081555,warning,routing,"Q12new should have been asked but is empty (Q10=[1], Q11=2.0)"
+70081555,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70081954,warning,consistency,spouse/partner in the household list but Q38 = No
+70082138,warning,consistency,spouse/partner in the household list but Q38 = No
+70082155,warning,consistency,state NH not covered by commuting zone 250 (NJ)
+70082658,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70082917,warning,consistency,spouse/partner in the household list but Q38 = No
+70091896,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70092142,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70092187,warning,consistency,spouse/partner in the household list but Q38 = No
+70092434,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70092952,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70093649,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70098943,warning,consistency,spouse/partner in the household list but Q38 = No
+70100771,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70104567,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70107324,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70111971,warning,range,age Q32=None
+70112397,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70113591,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70114375,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70114981,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70117073,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70118738,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70119063,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70119066,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70119412,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70119724,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70119904,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70120333,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70120449,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70120650,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70120994,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121200,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121294,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121650,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121770,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121781,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70121964,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122063,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[1], Q11=0.0)"
+70122063,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70122110,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122169,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122577,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122676,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122750,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70122751,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70123142,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70123448,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70124751,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70125279,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70125415,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70125516,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+70125615,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+70125693,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75000110,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75000206,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75000233,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75000807,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75001541,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002323,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002370,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002372,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002519,warning,consistency,spouse/partner in the household list but Q38 = No
+75002659,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002905,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002911,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75002958,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003035,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003068,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003268,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003326,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003573,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003658,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003675,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003689,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75003836,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004589,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004668,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004688,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004912,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004953,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75004963,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75005069,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75005972,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006039,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006392,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[2, 8, 9], Q11=0.0)"
+75006448,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006507,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006680,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[1], Q11=0.0)"
+75006680,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006733,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006765,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75006934,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75007285,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75007413,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75007544,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75007793,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75008333,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75008715,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75009098,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75009320,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75009524,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75009898,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75010093,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75010125,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75010329,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75010474,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75010960,warning,consistency,spouse/partner in the household list but Q38 = No
+75011416,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75011422,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75011675,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75011694,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75012035,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75012056,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75012100,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75012304,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[5], Q11=0.0)"
+75012304,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75012683,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75013227,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75013384,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75013478,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75013982,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014030,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[3, 4, 8], Q11=0.0)"
+75014030,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014145,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75014466,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014469,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014552,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014700,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014710,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[5], Q11=0.0)"
+75014912,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75014942,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75015164,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75015395,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[1], Q11=0.0)"
+75015551,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75015586,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75016043,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75016055,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75016745,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75017316,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75017440,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75018230,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75018475,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75018841,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75019226,warning,consistency,spouse/partner in the household list but Q38 = No
+75019307,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75019600,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75019984,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75020390,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75020786,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75020884,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75020954,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75021079,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75021142,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75021298,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75021582,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75022026,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75022098,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75022447,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75022922,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75023071,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75023154,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75023670,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75024763,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75024960,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75025005,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75026036,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75026091,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75026315,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75026638,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75026673,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[1], Q11=0.0)"
+75026692,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027379,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027456,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027499,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027500,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027783,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75027943,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028102,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028194,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028201,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028330,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028384,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028506,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028745,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028795,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75028939,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029075,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029155,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029316,warning,consistency,partnered (Q38) but no spouse/partner in the household list
+75029396,warning,consistency,spouse/partner in the household list but Q38 = No
+75029710,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029756,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029776,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75029838,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75030056,warning,consistency,spouse/partner in the household list but Q38 = No
+75030150,warning,routing,"Q37 is answered although the SCE routing would skip it (Q10=[3, 4], Q11=0.0)"
+75030294,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75030613,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)
+75030635,warning,routing,Q46 answered although living alone (asked anyway in the SCE data; shown)

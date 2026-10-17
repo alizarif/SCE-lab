@@ -1,0 +1,81 @@
+# Runs the survey every day and commits the results back to this repository.
+# Pause/stop: set `enabled: false` in config.yaml, or Actions tab → "Daily SCE survey" → ⋯ → Disable workflow.
+name: Daily SCE survey
+
+on:
+  schedule:                      # 8:00 am New York time, every day. GitHub's clock is UTC, and New York is UTC-4 in
+    - cron: "0 12 * * *"         # summer and UTC-5 in winter, so the job starts at both 12:00 and 13:00 UTC and the
+    - cron: "0 13 * * *"         # first step lets it go on only from 8 am New York time (a run with nothing due does nothing)
+  workflow_dispatch:              # "Run workflow" button in the Actions tab
+    inputs:
+      dry_run:
+        description: "Dry run: fake answers, no API calls, no cost"
+        type: boolean
+        default: false
+      limit:
+        description: "Run at most this many interviews (empty = all due today)"
+        required: false
+        default: ""
+      date:
+        description: "Run as if today were YYYY-MM-DD (empty = today)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write                 # needed to commit the results
+
+concurrency:                      # never two runs at the same time
+  group: sce-survey
+  cancel-in-progress: false
+
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350          # GitHub's hard limit is 360; config.yaml time_budget_minutes stops earlier
+    steps:
+      - name: Is it 8 am or later in New York?
+        id: clock
+        run: |
+          H=$(TZ=America/New_York date +%-H)
+          echo "New York time: $(TZ=America/New_York date '+%Y-%m-%d %H:%M')"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$H" -lt 8 ]; then echo "go=false" >> $GITHUB_OUTPUT; else echo "go=true" >> $GITHUB_OUTPUT; fi
+
+      - uses: actions/checkout@v4
+        if: steps.clock.outputs.go == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.clock.outputs.go == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        if: steps.clock.outputs.go == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Run today's interviews
+        if: steps.clock.outputs.go == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
+          python run.py daily $ARGS
+
+      - name: Statistics and charts
+        if: always() && steps.clock.outputs.go == 'true'
+        run: |
+          if [ ! -f .did_work ] && [ "${{ github.event_name }}" = "schedule" ]; then echo "nothing new today"; exit 0; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then python run.py report --dry-run; else python run.py report; fi
+
+      - name: Save results to the repository
+        if: always() && steps.clock.outputs.go == 'true'
+        run: |
+          git config user.name "sce-survey-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for p in data reports; do if [ -e "$p" ]; then git add "$p"; fi; done
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "survey run $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase --autostash && git push && break; sleep 10; done

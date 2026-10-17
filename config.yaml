@@ -1,0 +1,100 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  SCE monthly survey: all settings
+#  Edit this file and commit it. The next daily run picks up the change.
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── on / off ────────────────────────────────────────────────────────────
+enabled: true                 # false = the daily job starts, does nothing, and stops (this is how you pause or stop)
+start_date: 2026-10-17        # first survey day (YYYY-MM-DD)
+end_date: null                # last survey day, or null = keep going until you stop it
+timezone: America/New_York    # which calendar decides what "today" is
+
+# ── who answers ─────────────────────────────────────────────────────────
+participants_file: participants.xlsx   # one row per person (userid + the SCE persona answers)
+max_participants: null        # null = everyone in the file; a number = only the first N (for a pilot)
+seed: 2026                    # with the month, fixes the random interview day of each person (redrawn every month)
+age_moves_with_date: false    # false = the age the person reported in the SCE (Q32), like every other persona answer
+                              # true  = that age + the years since that interview (e.g. 83 in 2013 → 96 in 2026)
+
+# ── what is asked ───────────────────────────────────────────────────────
+questionnaire_file: questionnaire.xlsx # exact SCE wording; set include = FALSE to drop a question
+respondent_type: auto         # auto = first interview "new", later ones "repeat" (repeat respondents also get
+                              #        the home-price / commodity block C1-C4, as in the real SCE) | new | repeat
+reask: true                   # like the SCE web form, ask once more (with the SCE's own message) when an answer is
+                              #   missing (E1/E9), when Q10 mixes working and "not working but would like to work" (E8),
+density_reask: true           #   or when probabilities do not add up to 100 ("Your total adds up to XX" + E3)
+
+# ── the model (OpenRouter) ──────────────────────────────────────────────
+model: openai/gpt-6-luna      # any OpenRouter model id
+temperature: null             # null = not sent (gpt-6-luna does not take a temperature)
+max_tokens: 3000              # room for the model's thinking + one answer
+top_p: null                   # null = not sent
+reasoning: {effort: low}      # thinking level for thinking models (none | minimal | low | medium | high), null = model default
+provider: null                # optional OpenRouter provider routing, e.g. {order: [openai], allow_fallbacks: false}
+concurrency: 30               # interviews run in parallel (each sends one request at a time to OpenRouter)
+time_budget_minutes: 300      # stop starting new interviews after this (GitHub stops a job at 6 h); leftovers run next day
+max_consecutive_errors: 25    # stop the run if the API keeps failing (e.g. no credit left)
+
+# ── the four types (arms) ───────────────────────────────────────────────
+# Every participant is interviewed once a month in EVERY arm (separate conversations, same day).
+arms:
+  - id: A_noweb_nomemory
+    web: false
+    memory: false
+  - id: B_web_nomemory
+    web: true
+    memory: false
+  - id: C_noweb_memory
+    web: false
+    memory: true
+  - id: D_web_memory
+    web: true
+    memory: true
+
+# ── web search (arms with web: true) ────────────────────────────────────
+web:
+  engine: exa                 # exa | native | parallel | perplexity (OpenRouter web plugin engines)
+  max_results: 10             # top 10 results
+  scope: interview            # interview = one search at the start of each interview, results stay in the conversation
+                              # question  = a fresh search on every question (about 45x the search cost)
+  keep_results_in_conversation: true   # paste the found pages (title, link, text) into the conversation so every
+                                       # later question can use them; false = only the model's own notes stay
+  result_chars: 1000          # characters kept per page when pasted into the conversation
+  prompt: |
+    Latest U.S. economy news as of {DATE}: inflation and prices, jobs and unemployment, interest rates and the Federal Reserve, the stock market, the housing market, gas prices.
+
+    Before the survey starts, you look at today's news, as above. Read what the search found. Then write 3 to 5 short bullet points on what you learned that matters to you. After that the survey begins.
+
+# ── memory (arms with memory: true) ─────────────────────────────────────
+memory:
+  mode: summary               # summary = your earlier answers are listed at the start of this month's survey
+                              # thread  = last month's whole conversation is replayed, and this month continues it
+  months: 12                  # summary: how many earlier months are listed
+  thread_months: 1            # thread: how many earlier conversations are replayed (each one adds ~10k tokens per call)
+
+# ── prompts (placeholders: {DATE} = today, e.g. October 16, 2026) ───────
+prompts:
+  role: |
+    You are answering a survey.
+    Answer as the person described below would. Stay in character for the whole survey. We want to learn about your current economic well-being and your outlook for the future.
+    Most of the questions in this survey have no right or wrong answers - we are interested in your views and opinions. In this survey by household we mean everyone who usually lives in your primary residence (including yourself), excluding those whom you have counted as non-relatives (like roommates and renters).
+  after_persona: |
+    Today's date is {DATE}.
+    Answer each question in the format requested, and nothing else.
+  memory_header: "You took part in this survey before. Your answers in earlier months (you may update your views):"
+  thread_bridge: "One month later. Today's date is {DATE}. You are taking this month's survey."
+
+# ── report ──────────────────────────────────────────────────────────────
+report:
+  charts:                     # one trend chart per item (stats are computed for every numeric item)
+    - Q8v2part2               # expected inflation, next 12 months (%)
+    - Q9_binmean              # mean of the 1-year inflation probabilities, using bin midpoints (not the SCE's fitted Q9_mean)
+    - Q9bv2part2              # expected inflation, 2-3 years ahead (%)
+    - Q4new                   # chance U.S. unemployment is higher
+    - Q5new                   # chance savings interest rates are higher
+    - Q6new                   # chance U.S. stock prices are higher
+    - Q13new                  # chance of losing main job
+    - Q25v2part2              # expected household income change (%)
+    - Q26v2part2              # expected household spending change (%)
+    - Q30new                  # chance of missing a minimum debt payment
+    - Q31v2part2              # expected national home price change (%)
