@@ -1,0 +1,111 @@
+interview_id,date,wave,arm,web,memory,userid,respondent_type,order,question_id,label,type,module,value,answer_text,answer_json,raw_response,reasked,reask_reason,first_response,prompt_tokens,completion_tokens,reasoning_tokens,cost_usd,latency_s,attempts,model,provider,error
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,1,Q1,Household finances vs 12 months ago,choice,financial,2,2 = Somewhat worse off,2,ANSWER: 2,False,,,2996,8,,0.00037842,0.97,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,2,Q2,Household finances 12 months from now,choice,financial,2,2 = Somewhat worse off,2,ANSWER: 2,False,,,3106,8,,4.798e-05,1.02,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,3,Q3,Chance of moving home (12 months),percent,financial,2.0,2%,2.0,ANSWER: 2,False,,,3313,8,,6.12e-05,0.99,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,4,Q4new,Chance U.S. unemployment is higher (12 months),percent,macro,60.0,60%,60.0,ANSWER: 60,False,,,3434,38,28,6.753e-05,2.61,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,5,Q5new,Chance savings interest rates are higher (12 months),percent,macro,65.0,65%,65.0,ANSWER: 65,False,,,3511,40,30,6.423e-05,2.38,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,6,Q6new,Chance U.S. stock prices are higher (12 months),percent,macro,40.0,40%,40.0,ANSWER: 40,False,,,3594,8,,4.976e-05,0.81,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,7,Q8v2,Inflation or deflation? (next 12 months),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,3689,8,,5.209e-05,0.82,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,8,Q8v2part2,Expected inflation rate (next 12 months),number,inflation,5.0,5%,5.0,ANSWER: 5.0,False,,,3770,10,,5.228e-05,0.77,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,9,Q9,Inflation probabilities by range (next 12 months),density,inflation,5.3,"bins 3, 8, 55, 25, 7, 1, 1, 0, 0, 0 (sum 100)","{""bins"": [3.0, 8.0, 55.0, 25.0, 7.0, 1.0, 1.0, 0.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 5.3}","BIN1: 3
+BIN2: 8
+BIN3: 55
+BIN4: 25
+BIN5: 7
+BIN6: 1
+BIN7: 1
+BIN8: 0
+BIN9: 0
+BIN10: 0",False,,,4101,63,,0.00011085,1.18,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,10,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,4256,8,,6.465e-05,0.78,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,11,Q9bv2part2,Expected inflation rate (2–3 years ahead),number,inflation,4.0,4%,4.0,ANSWER: 4.0,False,,,4344,10,,5.883e-05,0.89,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,12,Q9c,Inflation probabilities by range (2–3 years ahead),density,inflation,4.17,"bins 2, 7, 35, 35, 16, 3, 1, 1, 0, 0 (sum 100)","{""bins"": [2.0, 7.0, 35.0, 35.0, 16.0, 3.0, 1.0, 1.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 4.17}","BIN1: 2
+BIN2: 7
+BIN3: 35
+BIN4: 35
+BIN5: 16
+BIN6: 3
+BIN7: 1
+BIN8: 1
+BIN9: 0
+BIN10: 0",False,,,4652,63,,0.00011371,1.26,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,13,Q1a,Inflation or deflation? (12 months starting 4 years ahead),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,4807,8,,7.017e-05,0.79,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,14,Q1apart2,Expected inflation rate (4–5 years ahead),number,inflation,4.0,4%,4.0,ANSWER: 4.0,False,,,4895,10,,6.434e-05,0.88,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,15,Q9new2,Inflation probabilities by range (4–5 years ahead),density,inflation,4.17,"bins 2, 7, 35, 35, 16, 3, 1, 1, 0, 0 (sum 100)","{""bins"": [2.0, 7.0, 35.0, 35.0, 16.0, 3.0, 1.0, 1.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 4.17}","BIN1: 2
+BIN2: 7
+BIN3: 35
+BIN4: 35
+BIN5: 16
+BIN6: 3
+BIN7: 1
+BIN8: 1
+BIN9: 0
+BIN10: 0",False,,,5203,63,,0.00011922,1.28,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,16,Q10,Employment situation,multi,labor,,6 = Permanently disabled or unable to work; 7 = Retiree or early retiree,"[6, 7]","ANSWER: 6,7",False,,,5403,10,,8.23e-05,0.81,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,17,Q25v2,Household income: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,5554,72,62,0.00010917,2.72,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,18,Q25v2part2,Expected household income change (%),number,hh_flows,1.0,1%,1.0,ANSWER: 1,False,,,5633,8,,6.968e-05,1.31,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,19,Q26v2,Household spending: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,5803,8,,8.185e-05,0.97,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,20,Q26v2part2,Expected household spending change (%),number,hh_flows,5.0,5%,5.0,ANSWER: 5,False,,,5882,8,,7.218e-05,0.93,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,21,Q27v2,Taxes at same income: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,6010,8,,7.909e-05,0.84,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,22,Q27v2part2,Expected change in taxes (%),number,hh_flows,2.0,2%,2.0,ANSWER: 2,False,,,6088,8,,7.412e-05,1.11,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,23,Q28,Credit access vs 12 months ago,choice,credit,1,1 = Much harder,1,ANSWER: 1,False,,,6203,8,,7.952e-05,1.64,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,24,Q29,Credit access 12 months from now,choice,credit,2,2 = Somewhat harder,2,ANSWER: 2,False,,,6326,8,,8.168e-05,1.23,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,25,Q30new,Chance of missing a minimum debt payment (3 months),percent,credit,5.0,5%,5.0,ANSWER: 5,False,,,6433,8,,8.09e-05,0.87,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,26,Q31v2,National home prices: increase or decrease? (12 months),signed,housing,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,6543,8,,8.235e-05,0.9,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70066882,2026-10-17,2026-10,B_web_nomemory,True,False,70066882,new,27,Q31v2part2,Expected national home price change (%),number,housing,2.0,2%,2.0,ANSWER: 2.0,False,,,6622,10,,8.057e-05,0.93,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,1,Q1,Household finances vs 12 months ago,choice,financial,2,2 = Somewhat worse off,2,ANSWER: 2,False,,,3101,8,,0.00039155,0.85,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,2,Q2,Household finances 12 months from now,choice,financial,3,3 = About the same,3,ANSWER: 3,False,,,3211,8,,4.903e-05,1.58,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,3,Q3,Chance of moving home (12 months),percent,financial,2.0,2%,2.0,ANSWER: 2,False,,,3418,8,,6.226e-05,1.15,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,4,Q4new,Chance U.S. unemployment is higher (12 months),percent,macro,60.0,60%,60.0,ANSWER: 60,False,,,3539,36,26,6.758e-05,2.39,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,5,Q5new,Chance savings interest rates are higher (12 months),percent,macro,65.0,65%,65.0,ANSWER: 65,False,,,3616,8,,4.928e-05,1.06,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,6,Q6new,Chance U.S. stock prices are higher (12 months),percent,macro,45.0,45%,45.0,ANSWER: 45,False,,,3699,8,,5.08e-05,0.85,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,7,Q8v2,Inflation or deflation? (next 12 months),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,3794,8,,5.313e-05,0.88,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,8,Q8v2part2,Expected inflation rate (next 12 months),number,inflation,4.5,4.5%,4.5,ANSWER: 4.5,False,,,3875,10,,5.333e-05,1.0,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,9,Q9,Inflation probabilities by range (next 12 months),density,inflation,4.75,"bins 2, 5, 48, 35, 8, 1, 1, 0, 0, 0 (sum 100)","{""bins"": [2.0, 5.0, 48.0, 35.0, 8.0, 1.0, 1.0, 0.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 4.75}","BIN1: 2
+BIN2: 5
+BIN3: 48
+BIN4: 35
+BIN5: 8
+BIN6: 1
+BIN7: 1
+BIN8: 0
+BIN9: 0
+BIN10: 0",False,,,4206,63,,0.00011189,1.54,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,10,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,4361,8,,6.57e-05,0.98,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,11,Q9bv2part2,Expected inflation rate (2–3 years ahead),number,inflation,3.5,3.5%,3.5,ANSWER: 3.5,False,,,4449,10,,5.988e-05,0.85,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,12,Q9c,Inflation probabilities by range (2–3 years ahead),density,inflation,4.06,"bins 1, 4, 35, 45, 12, 2, 1, 0, 0, 0 (sum 100)","{""bins"": [1.0, 4.0, 35.0, 45.0, 12.0, 2.0, 1.0, 0.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 4.06}","BIN1: 1
+BIN2: 4
+BIN3: 35
+BIN4: 45
+BIN5: 12
+BIN6: 2
+BIN7: 1
+BIN8: 0
+BIN9: 0
+BIN10: 0",False,,,4757,63,,0.00011476,1.26,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,13,Q1a,Inflation or deflation? (12 months starting 4 years ahead),signed,inflation,1,1 = Inflation,1,ANSWER: 1,False,,,4912,8,,7.122e-05,1.78,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,14,Q1apart2,Expected inflation rate (4–5 years ahead),number,inflation,3.0,3%,3.0,ANSWER: 3.0,False,,,5000,10,,6.539e-05,1.01,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,15,Q9new2,Inflation probabilities by range (4–5 years ahead),density,inflation,3.74,"bins 1, 3, 30, 47, 15, 3, 1, 0, 0, 0 (sum 100)","{""bins"": [1.0, 3.0, 30.0, 47.0, 15.0, 3.0, 1.0, 0.0, 0.0, 0.0], ""sum"": 100.0, ""mean"": 3.74}","BIN1: 1
+BIN2: 3
+BIN3: 30
+BIN4: 47
+BIN5: 15
+BIN6: 3
+BIN7: 1
+BIN8: 0
+BIN9: 0
+BIN10: 0",False,,,5308,63,,0.00012027,1.31,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,16,Q10,Employment situation,multi,labor,,7 = Retiree or early retiree,[7],ANSWER: 7,False,,,5508,8,,8.235e-05,0.81,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,17,Q20new,Chance of starting to look for work (12 months),percent,labor,2.0,2%,2.0,ANSWER: 2,False,,,5580,8,,6.835e-05,0.95,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,18,Q21new,Chance of starting to look for work (3 months),percent,labor,1.0,1%,1.0,ANSWER: 1,False,,,5660,8,,7.007e-05,1.27,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,19,Q25v2,Household income: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,5809,8,,7.949e-05,1.88,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,20,Q25v2part2,Expected household income change (%),number,hh_flows,2.0,2%,2.0,ANSWER: 2,False,,,5888,8,,7.224e-05,1.01,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,21,Q26v2,Household spending: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,6058,8,,8.44e-05,1.26,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,22,Q26v2part2,Expected household spending change (%),number,hh_flows,4.0,4%,4.0,ANSWER: 4,False,,,6137,8,,7.473e-05,0.85,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,23,Q27v2,Taxes at same income: increase or decrease? (12 months),signed,hh_flows,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,6265,8,,8.164e-05,1.19,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,24,Q27v2part2,Expected change in taxes (%),number,hh_flows,2.0,2%,2.0,ANSWER: 2,False,,,6343,8,,7.667e-05,1.01,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,25,Q28,Credit access vs 12 months ago,choice,credit,2,2 = Somewhat harder,2,ANSWER: 2,False,,,6458,8,,8.208e-05,1.38,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,26,Q29,Credit access 12 months from now,choice,credit,2,2 = Somewhat harder,2,ANSWER: 2,False,,,6581,8,,8.423e-05,0.98,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,27,Q30new,Chance of missing a minimum debt payment (3 months),percent,credit,5.0,5%,5.0,ANSWER: 5,False,,,6688,8,,8.346e-05,0.9,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,28,Q31v2,National home prices: increase or decrease? (12 months),signed,housing,1,1 = increase by 0% or more,1,ANSWER: 1,False,,,6798,8,,8.49e-05,0.9,1,openai/gpt-6-luna,OpenAI,
+2026-10_B_web_nomemory_70069994,2026-10-17,2026-10,B_web_nomemory,True,False,70069994,new,29,Q31v2part2,Expected national home price change (%),number,housing,2.0,2%,2.0,ANSWER: 2,False,,,6877,8,,8.213e-05,1.16,1,openai/gpt-6-luna,OpenAI,

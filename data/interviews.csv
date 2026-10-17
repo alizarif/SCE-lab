@@ -3,3 +3,7 @@ interview_id,userid,arm,web,memory,wave,scheduled_date,run_date,started_utc,fini
 2026-10_A_noweb_nomemory_70069994,70069994,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:46Z,new,complete,29,29,0,0,29,89780,830,0.001881,0,,openai/gpt-6-luna,
 2026-10_A_noweb_nomemory_70071878,70071878,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:46Z,new,complete,35,35,0,0,35,123599,655,0.002224,0,,openai/gpt-6-luna,
 2026-10_A_noweb_nomemory_70070990,70070990,A_noweb_nomemory,False,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:26:05Z,2026-10-17T19:26:47Z,new,complete,35,35,0,0,35,123700,738,0.002266,0,,openai/gpt-6-luna,
+2026-10_B_web_nomemory_70066882,70066882,B_web_nomemory,True,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:28:42Z,2026-10-17T19:29:17Z,new,complete,27,27,0,0,28,135738,674,0.009873,10,,openai/gpt-6-luna,
+2026-10_C_noweb_memory_70066882,70066882,C_noweb_memory,False,True,2026-10,2026-10-17,2026-10-17,2026-10-17T19:28:42Z,2026-10-17T19:29:17Z,new,complete,27,27,0,0,27,81504,699,0.001588,0,,openai/gpt-6-luna,
+2026-10_D_web_memory_70066882,70066882,D_web_memory,True,True,2026-10,2026-10-17,2026-10-17,2026-10-17T19:28:42Z,2026-10-17T19:29:22Z,new,complete,27,27,0,0,28,140004,891,0.010042,10,,openai/gpt-6-luna,
+2026-10_B_web_nomemory_70069994,70069994,B_web_nomemory,True,False,2026-10,2026-10-17,2026-10-17,2026-10-17T19:28:42Z,2026-10-17T19:29:22Z,new,complete,29,29,0,0,30,151168,785,0.010079,10,,openai/gpt-6-luna,
