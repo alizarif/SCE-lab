@@ -13,7 +13,7 @@ on:
     - cron: "7 13 * * *"
     - cron: "37 13 * * *"
     - cron: "7 14 * * *"
-    - cron: "7 16 * * *"
+    - cron: "17 16 * * *"
   repository_dispatch:            # a start request sent through the GitHub API (type "run-survey")
     types: [run-survey]
   workflow_dispatch:              # "Run workflow" button in the Actions tab
