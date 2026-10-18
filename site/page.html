@@ -1,0 +1,428 @@
+<style>
+.sce { max-width: 1240px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); display: grid; gap: var(--cds-gap-lg); }
+.sce * { box-sizing: border-box; }
+.sce [hidden] { display: none !important; }
+.sce h1, .sce h2, .sce h3, .sce p { margin: 0; }
+.sce-head { display: grid; gap: var(--cds-gap-sm); padding-top: var(--cds-pad-sm); }
+.sce-eyebrow { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .06em; text-transform: uppercase; }
+.sce-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.35); line-height: 1.1; text-wrap: balance; }
+.sce-take { font-size: var(--cds-font-size-heading); line-height: 1.45; max-width: 70ch; text-wrap: pretty; }
+.sce-take b, .sce .sce-strong { font-weight: 600; }
+.sce-meta { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.sce-meta span.sce-pill { border: 1px solid var(--color-border-line); border-radius: 999px; padding: 1px 8px; }
+.sce-tabs { display: flex; gap: 2px; overflow-x: auto; border-bottom: 1px solid var(--color-border-line); scrollbar-width: thin; }
+.sce-tab { appearance: none; border: 0; background: none; font: inherit; color: var(--color-fg-muted); padding: 10px 12px; cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; font-size: var(--cds-font-size-body); }
+.sce-tab:hover { color: var(--color-fg); }
+.sce-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); font-weight: 600; }
+.sce-tab:focus-visible, .sce button:focus-visible, .sce select:focus-visible, .sce input:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.sce-page { display: grid; gap: var(--cds-gap-lg); }
+.sce-section { display: grid; gap: var(--cds-gap-md); }
+.sce-h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.sce-lede { color: var(--color-fg-muted); max-width: 75ch; line-height: 1.5; }
+.sce-grid { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.sce-grid-wide { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 34rem), 1fr)); }
+.sce-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-sm); align-content: start; min-width: 0; }
+.sce-card h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+.sce-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; }
+.sce-tiles { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); }
+.sce-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md) var(--cds-pad-lg); display: grid; gap: 6px; align-content: start; }
+.sce-tile-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sce-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sce-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.sce-bar { height: 6px; border-radius: 3px; background: var(--cds-chart-grid); overflow: hidden; }
+.sce-bar > i { display: block; height: 100%; background: var(--color-fg); border-radius: 3px; width: 0; transition: width var(--cds-dur-slow) var(--cds-ease-out); }
+.sce-controls { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); align-items: end; }
+.sce-field { display: grid; gap: 4px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); min-width: 0; }
+.sce-field select, .sce-field input { font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 6px 8px; max-width: 100%; }
+.sce-field select { max-width: min(100%, 30rem); }
+.sce-seg { display: inline-flex; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); overflow: hidden; }
+.sce-seg button { appearance: none; border: 0; background: var(--color-bg); color: var(--color-fg-muted); font: inherit; font-size: var(--cds-font-size-caption); padding: 7px 10px; cursor: pointer; }
+.sce-seg button + button { border-left: 1px solid var(--color-border-line); }
+.sce-seg button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); }
+.sce-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.sce-chip { appearance: none; font: inherit; font-size: var(--cds-font-size-caption); display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--color-border-line); border-radius: 999px; padding: 4px 10px 4px 8px; background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
+.sce-chip[aria-pressed="false"] { opacity: .45; }
+.sce-sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+.sce-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sce-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sce-chart { position: relative; min-height: 260px; width: 100%; }
+.sce-chart.sce-short { min-height: 200px; }
+.sce-chart.sce-tall { min-height: 360px; }
+.sce-chart svg { display: block; overflow: visible; }
+.sce-chart text { fill: var(--color-fg-muted); font-size: 11px; font-family: var(--font-anthropic-sans); }
+.sce-chart .sce-lbl { fill: var(--color-fg); }
+.sce-chart .sce-grid line { stroke: var(--cds-chart-grid); }
+.sce-chart .sce-axis path, .sce-chart .sce-axis line { stroke: var(--cds-chart-axis); }
+.sce-empty { display: flex; align-items: center; justify-content: center; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); text-align: center; padding: var(--cds-pad-md); }
+.sce-failed::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); margin-right: 8px; }
+.sce-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); line-height: 1.5; z-index: 5; max-width: 280px; display: none; }
+.sce-tip .sce-tip-h { color: var(--cds-text-secondary); margin-bottom: 2px; }
+.sce-tip .sce-tip-r { display: flex; align-items: center; gap: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sce-tip .sce-tip-r b { margin-left: auto; padding-left: 10px; font-weight: 600; }
+.sce-tablebox { overflow: auto; max-height: 520px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.sce-tablebox.sce-free { max-height: none; }
+.sce-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.sce-table th, .sce-table td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.sce-table th { position: sticky; top: 0; background: var(--color-panel); font-weight: 600; color: var(--color-fg-muted); z-index: 1; white-space: nowrap; }
+.sce-table td.sce-num, .sce-table th.sce-num { text-align: right; white-space: nowrap; }
+.sce-table tbody tr:last-child td { border-bottom: 0; }
+.sce-table th button { all: unset; cursor: pointer; }
+.sce-table th button:focus-visible { outline: 2px solid var(--color-fg); }
+.sce-table tr.sce-click { cursor: pointer; }
+.sce-table tr.sce-click:hover td { background: var(--cds-chart-grid); }
+.sce-table tr[aria-selected="true"] td { background: var(--cds-chart-grid); font-weight: 600; }
+.sce-armname { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.sce-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.sce-cal-h { font-size: 10px; color: var(--color-fg-muted); text-align: center; text-transform: uppercase; letter-spacing: .05em; }
+.sce-day { border: 1px solid var(--color-border-line); border-radius: 6px; padding: 5px 6px; min-height: 52px; display: grid; align-content: space-between; font-size: 11px; font-variant-numeric: tabular-nums; background: var(--color-bg); }
+.sce-day b { font-weight: 600; font-size: 12px; }
+.sce-day[data-status="done"] { background: color-mix(in srgb, var(--color-ok) 14%, var(--color-bg)); border-color: color-mix(in srgb, var(--color-ok) 40%, var(--color-border-line)); }
+.sce-day[data-status="due"] { background: color-mix(in srgb, var(--color-warn) 16%, var(--color-bg)); border-color: color-mix(in srgb, var(--color-warn) 45%, var(--color-border-line)); }
+.sce-day[data-today="1"] { outline: 2px solid var(--color-fg); outline-offset: -1px; }
+.sce-day span { color: var(--color-fg-muted); }
+.sce-statusdot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.sce-inbar { display: inline-block; height: 8px; border-radius: 4px; background: var(--color-fg); opacity: .55; vertical-align: middle; margin-right: 8px; }
+.sce-persona { white-space: pre-wrap; font-size: var(--cds-font-size-caption); line-height: 1.55; max-height: 460px; overflow: auto; background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); margin: 0; font-family: var(--font-anthropic-sans); }
+.sce-split { display: grid; gap: var(--cds-gap-md); grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 860px) { .sce-split { grid-template-columns: minmax(0, 1fr); } }
+.sce-kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: var(--cds-font-size-caption); }
+.sce-kv dt { color: var(--color-fg-muted); }
+.sce-kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.sce-prose { display: grid; gap: var(--cds-gap-sm); max-width: 78ch; line-height: 1.6; }
+.sce-prose h3 { font-size: var(--cds-font-size-body); font-weight: 600; margin-top: var(--cds-gap-sm); }
+.sce-prose ul { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.sce-matrix { display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; font-size: var(--cds-font-size-caption); align-items: stretch; }
+.sce-matrix > div { padding: 8px 10px; border-radius: 6px; }
+.sce-matrix .sce-mh { color: var(--color-fg-muted); display: flex; align-items: end; }
+.sce-matrix .sce-mc { border: 1px solid var(--color-border-line); background: var(--color-bg); display: grid; gap: 2px; }
+.sce-matrix .sce-mc .sce-big { font-size: var(--cds-font-size-heading); }
+.sce a { color: inherit; text-underline-offset: 2px; }
+.sce-news-title { font-weight: 600; font-size: var(--cds-font-size-caption); }
+.sce-news-snip { color: var(--color-fg-muted); margin-top: 2px; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+[data-dash-source-state=empty] { color: transparent; }
+@media (prefers-reduced-motion: no-preference) {
+  .sce-page[data-fresh="1"] { animation: sce-in var(--cds-dur-slow) var(--cds-ease-out); }
+  @keyframes sce-in { from { opacity: .0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+
+<div class="sce">
+  <header class="sce-head" id="top">
+    <div class="sce-eyebrow">Survey of Consumer Expectations · answered by LLM personas of 1,200 real SCE respondents</div>
+    <h1 class="sce-title">SCE Lab Live</h1>
+    <p class="sce-take" id="takeaway">
+      <span class="dash-skeleton" data-source="status" data-field="people_month" data-row="0">—</span> of
+      <span data-source="status" data-field="participants" data-row="0">—</span> people have taken
+      <span id="take-month">this month's</span> survey so far
+      (<span data-source="status" data-field="interviews_month" data-row="0">—</span> interviews across the four versions).
+      <span id="take-infl" hidden>Median one-year inflation expectation:
+        <b id="take-b" data-source="stats_monthly" data-field="median">—</b> with web search vs
+        <b id="take-a" data-source="stats_monthly" data-field="median">—</b> without.</span>
+    </p>
+    <div class="sce-meta">
+      <span>Data as of <span id="m-gen" data-source="status" data-field="generated_utc" data-row="0">—</span></span>
+      <span>Model <span data-source="status" data-field="model" data-row="0">—</span></span>
+      <span>Started <span id="m-start" data-source="status" data-field="start_date" data-row="0">—</span></span>
+      <span>Updates every day after the morning run</span>
+    </div>
+  </header>
+
+  <nav class="sce-tabs" role="tablist" aria-label="Dashboard pages">
+    <button class="sce-tab" role="tab" id="tab-overview" data-page="overview" aria-selected="true">Overview</button>
+    <button class="sce-tab" role="tab" id="tab-trends" data-page="trends" aria-selected="false">Trends</button>
+    <button class="sce-tab" role="tab" id="tab-arms" data-page="arms" aria-selected="false">Web &amp; memory</button>
+    <button class="sce-tab" role="tab" id="tab-dist" data-page="dist" aria-selected="false">Distributions</button>
+    <button class="sce-tab" role="tab" id="tab-groups" data-page="groups" aria-selected="false">Groups</button>
+    <button class="sce-tab" role="tab" id="tab-real" data-page="real" aria-selected="false">Real vs persona</button>
+    <button class="sce-tab" role="tab" id="tab-people" data-page="people" aria-selected="false">Panel</button>
+    <button class="sce-tab" role="tab" id="tab-news" data-page="news" aria-selected="false">News</button>
+    <button class="sce-tab" role="tab" id="tab-ops" data-page="ops" aria-selected="false">Runs &amp; quality</button>
+    <button class="sce-tab" role="tab" id="tab-method" data-page="method" aria-selected="false">Method</button>
+  </nav>
+
+  <main>
+    <section class="sce-page" id="overview" role="tabpanel" aria-labelledby="tab-overview"></section>
+    <section class="sce-page" id="trends" role="tabpanel" aria-labelledby="tab-trends" hidden></section>
+    <section class="sce-page" id="arms" role="tabpanel" aria-labelledby="tab-arms" hidden></section>
+    <section class="sce-page" id="dist" role="tabpanel" aria-labelledby="tab-dist" hidden></section>
+    <section class="sce-page" id="groups" role="tabpanel" aria-labelledby="tab-groups" hidden></section>
+    <section class="sce-page" id="real" role="tabpanel" aria-labelledby="tab-real" hidden></section>
+    <section class="sce-page" id="people" role="tabpanel" aria-labelledby="tab-people" hidden></section>
+    <section class="sce-page" id="news" role="tabpanel" aria-labelledby="tab-news" hidden></section>
+    <section class="sce-page" id="ops" role="tabpanel" aria-labelledby="tab-ops" hidden></section>
+    <section class="sce-page" id="method" role="tabpanel" aria-labelledby="tab-method" hidden></section>
+  </main>
+</div>
+
+<!-- ============ Overview ============ -->
+<template id="tpl-overview">
+  <div class="sce-tiles" id="ov-tiles">
+    <div class="sce-tile" id="tile-month">
+      <div class="sce-tile-label">Interviews this month</div>
+      <div class="sce-big" data-source="status" data-field="interviews_month" data-row="0">—</div>
+      <div class="sce-bar"><i id="ov-prog"></i></div>
+      <div class="sce-sub">of <span data-source="status" data-field="interviews_month_target" data-row="0">—</span> planned (every person, four versions)</div>
+    </div>
+    <div class="sce-tile" id="tile-people">
+      <div class="sce-tile-label">People interviewed this month</div>
+      <div class="sce-big" data-source="status" data-field="people_month" data-row="0">—</div>
+      <div class="sce-sub">of <span data-source="status" data-field="participants" data-row="0">—</span> in the panel</div>
+    </div>
+    <div class="sce-tile" id="tile-last">
+      <div class="sce-tile-label">Last run</div>
+      <div class="sce-big" id="ov-lastrun" data-source="status" data-field="last_run_date" data-row="0">—</div>
+      <div class="sce-sub"><span data-source="status" data-field="interviews_last_run" data-row="0">—</span> interviews ·
+        <span data-source="status" data-field="errors_last_run" data-row="0">—</span> failed answers ·
+        <span data-source="status" data-field="reasks_last_run" data-row="0">—</span> re-asked</div>
+    </div>
+    <div class="sce-tile" id="tile-cost">
+      <div class="sce-tile-label">API spend this month</div>
+      <div class="sce-big" data-source="status" data-field="cost_month" data-row="0">—</div>
+      <div class="sce-sub"><span data-source="status" data-field="cost_total" data-row="0">—</span> since the start · <span data-source="status" data-field="days_run" data-row="0">—</span> survey days</div>
+    </div>
+  </div>
+
+  <div class="sce-grid-wide">
+    <div class="sce-card" id="ov-infl-card">
+      <h3>One-year inflation expectation, month to date</h3>
+      <p class="sce-note">Median answer to “what will the rate of inflation be over the next 12 months?”, over everyone interviewed so far this month, by version.</p>
+      <div class="sce-legend" id="ov-legend"></div>
+      <div class="sce-chart" id="ov-infl" data-source="stats_mtd arms"></div>
+    </div>
+    <div class="sce-card" id="ov-cal-card">
+      <h3>Interview calendar</h3>
+      <p class="sce-note">Each person gets one random day a month and answers all four versions that day. Green: done. Amber: due but not done yet.</p>
+      <div id="ov-cal" data-source="schedule"></div>
+    </div>
+  </div>
+
+  <div class="sce-section" id="ov-headlines">
+    <h2 class="sce-h2">This month at a glance</h2>
+    <p class="sce-lede">Each row is one question. Dots are the four versions of the survey this month; the grey tick is the same 1,200 people's real SCE answers in their latest year in the survey panel, for comparison.</p>
+    <div class="sce-legend" id="ov-legend2"></div>
+    <div class="sce-grid-wide">
+      <div class="sce-card" id="ov-forecasts">
+        <h3>Point forecasts · median</h3>
+        <p class="sce-note">Expected percent change over the next 12 months (inflation further ahead where noted).</p>
+        <div class="sce-chart sce-tall" id="ov-strip" data-source="stats_monthly real_history questions arms"></div>
+      </div>
+      <div class="sce-card" id="ov-probs">
+        <h3>Probabilities · mean</h3>
+        <p class="sce-note">Percent chance that each event happens.</p>
+        <div class="sce-chart sce-tall" id="ov-strip2" data-source="stats_monthly real_history questions arms"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- ============ Trends ============ -->
+<template id="tpl-trends">
+  <div class="sce-controls">
+    <label class="sce-field">Question<select id="tr-item"></select></label>
+    <div class="sce-field">Statistic<div class="sce-seg" id="tr-stat"><button type="button" data-v="median">Median</button><button type="button" data-v="mean">Mean</button></div></div>
+    <div class="sce-field">View<div class="sce-seg" id="tr-view"><button type="button" data-v="day">Each day</button><button type="button" data-v="mtd">Month to date</button></div></div>
+    <div class="sce-field">Versions<div class="sce-chips" id="tr-arms"></div></div>
+  </div>
+  <div class="sce-card" id="tr-card">
+    <h3 id="tr-title">—</h3>
+    <p class="sce-note" id="tr-text"></p>
+    <div class="sce-chart sce-tall" id="tr-chart" data-source="stats_daily stats_mtd arms"></div>
+    <p class="sce-note" id="tr-foot">Lines: the chosen statistic. Shaded band: middle half of answers (25th to 75th percentile). Each day has a different random group of about 1/30 of the panel, so day-to-day moves are noisy; the month-to-date view is the month's running estimate.</p>
+  </div>
+  <div class="sce-card">
+    <h3>Monthly summary for this question</h3>
+    <div class="sce-tablebox sce-free"><table class="sce-table" id="tr-table" data-source="stats_monthly"><thead></thead><tbody></tbody></table></div>
+  </div>
+</template>
+
+<!-- ============ Web & memory ============ -->
+<template id="tpl-arms">
+  <p class="sce-lede">The survey runs in four versions, a 2×2 design. <b>Web</b>: before the survey, the persona reads the top 10 web search results for today's U.S. economic news. <b>Memory</b>: the persona sees its own answers from earlier months. Every person answers all four versions on the same day, so the differences below compare the same people.</p>
+  <div class="sce-controls">
+    <label class="sce-field">Month<select id="ar-wave"></select></label>
+  </div>
+  <div class="sce-grid-wide">
+    <div class="sce-card" id="ar-web-card">
+      <h3>Effect of reading today's news</h3>
+      <p class="sce-note">Difference in the month's headline statistic, web minus no web, in percentage points. Filled dot: without memory (B − A). Open dot: with memory (D − C).</p>
+      <div class="sce-chart sce-tall" id="ar-web" data-source="effects"></div>
+    </div>
+    <div class="sce-card" id="ar-mem-card">
+      <h3>Effect of remembering earlier answers</h3>
+      <p class="sce-note">Memory minus no memory. Filled dot: without web (C − A). Open dot: with web (D − B). Memory only starts to matter from the second month, when there are earlier answers to remember.</p>
+      <div class="sce-chart sce-tall" id="ar-mem" data-source="effects"></div>
+    </div>
+  </div>
+  <div class="sce-card" id="ar-matrix-card">
+    <div class="sce-controls"><label class="sce-field">Question<select id="ar-item"></select></label></div>
+    <div class="sce-matrix" id="ar-matrix"></div>
+    <p class="sce-note" id="ar-matrix-note"></p>
+  </div>
+</template>
+
+<!-- ============ Distributions ============ -->
+<template id="tpl-dist">
+  <div class="sce-card" id="di-den-card">
+    <div class="sce-controls">
+      <label class="sce-field">Probability question<select id="di-q"></select></label>
+      <label class="sce-field">Month<select id="di-wave"></select></label>
+    </div>
+    <h3 id="di-title">—</h3>
+    <p class="sce-note">Respondents split 100 points across ten ranges. Bars show the average points given to each range, by version.</p>
+    <div class="sce-legend" id="di-legend"></div>
+    <div class="sce-chart sce-tall" id="di-den" data-source="density arms"></div>
+  </div>
+  <div class="sce-card" id="di-ch-card">
+    <div class="sce-controls"><label class="sce-field">Multiple-choice question<select id="di-c"></select></label></div>
+    <h3 id="di-ctitle">—</h3>
+    <p class="sce-note">Share of answers in each category, by version. For “select all that apply” questions the shares can add up to more than 100%.</p>
+    <div class="sce-chart" id="di-ch" data-source="choices arms"></div>
+  </div>
+</template>
+
+<!-- ============ Groups ============ -->
+<template id="tpl-groups">
+  <div class="sce-controls">
+    <label class="sce-field">Question<select id="gr-item"></select></label>
+    <label class="sce-field">Split by<select id="gr-dim"></select></label>
+    <div class="sce-field">Statistic<div class="sce-seg" id="gr-stat"><button type="button" data-v="median">Median</button><button type="button" data-v="mean">Mean</button></div></div>
+    <label class="sce-field">Month<select id="gr-wave"></select></label>
+  </div>
+  <div class="sce-card">
+    <h3 id="gr-title">—</h3>
+    <p class="sce-note">Groups come from each person's own SCE answers (the persona's demographics). Hover a dot for the number of answers behind it.</p>
+    <div class="sce-legend" id="gr-legend"></div>
+    <div class="sce-chart sce-tall" id="gr-chart" data-source="groups arms"></div>
+  </div>
+</template>
+
+<!-- ============ Real vs persona ============ -->
+<template id="tpl-real">
+  <p class="sce-lede">Every persona is built from a real SCE respondent who took part between 2016 and 2025. Here the personas' answers are set next to the answers the same people gave in the real survey.</p>
+  <div class="sce-controls"><label class="sce-field">Question<select id="re-item"></select></label></div>
+  <div class="sce-card" id="re-hist-card">
+    <h3 id="re-title">—</h3>
+    <p class="sce-note">Line and band: the real answers of the 1,200 people, by calendar year (median, 25th–75th percentile). Dots on the right: the personas this month, by version.</p>
+    <div class="sce-legend" id="re-legend"></div>
+    <div class="sce-chart sce-tall" id="re-hist" data-source="real_history stats_monthly arms"></div>
+  </div>
+  <div class="sce-split">
+    <div class="sce-card" id="re-bins-card">
+      <h3>Persona answers, grouped by the person's last real answer</h3>
+      <p class="sce-note">People interviewed this month, grouped by what they answered in their last real SCE interview (which may be years ago). Grey tick: the group's real median. Dots: the personas' median this month, by version. Groups with fewer than 5 people are left out.</p>
+      <div class="sce-legend" id="re-legend2"></div>
+      <div class="sce-chart sce-tall" id="re-bins" data-source="pair_bins arms"></div>
+    </div>
+    <div class="sce-card" id="re-fit-card">
+      <h3>How closely personas track their person</h3>
+      <p class="sce-note">Correlation across people between the persona's answer and the person's last real answer. Gap: median of persona minus real, per person.</p>
+      <div class="sce-tablebox sce-free"><table class="sce-table" id="re-fit"><thead></thead><tbody></tbody></table></div>
+    </div>
+  </div>
+</template>
+
+<!-- ============ Panel ============ -->
+<template id="tpl-people">
+  <p class="sce-lede">Who the personas are: the <span data-source="status" data-field="participants" data-row="0">—</span> people drawn from the real SCE panel, by the characteristics their personas are built from, and how many of each group have been interviewed this month. Only totals are shown here; no individual respondent's record is published.</p>
+  <div class="sce-grid" id="pa-grid" data-source="panel"></div>
+</template>
+
+<!-- ============ News ============ -->
+<template id="tpl-news">
+  <p class="sce-lede">Versions B and D start each interview with a web search for today's U.S. economic news (10 results per interview). These are the pages the personas read, counted over that day's interviews.</p>
+  <div class="sce-controls">
+    <label class="sce-field">Day<select id="nw-date"></select></label>
+    <label class="sce-field">Version<select id="nw-arm"></select></label>
+  </div>
+  <div class="sce-split">
+    <div class="sce-card">
+      <h3 id="nw-title">Most-read pages</h3>
+      <div class="sce-tablebox"><table class="sce-table" id="nw-table"><thead><tr><th>Page</th><th class="sce-num">Interviews</th></tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="sce-card">
+      <h3>Sources this month</h3>
+      <p class="sce-note">Search results per news site, all days and both web versions.</p>
+      <div class="sce-chart sce-tall" id="nw-dom" data-source="news_domains"></div>
+    </div>
+  </div>
+</template>
+
+<!-- ============ Runs & quality ============ -->
+<template id="tpl-ops">
+  <div class="sce-grid-wide">
+    <div class="sce-card">
+      <h3>Interviews per day</h3>
+      <div class="sce-legend" id="op-legend"></div>
+      <div class="sce-chart" id="op-n" data-source="runs_daily arms"></div>
+    </div>
+    <div class="sce-card">
+      <h3>API spend per day</h3>
+      <p class="sce-note">OpenRouter cost in U.S. dollars, including web search. Versions with web search cost more because every later question resends the news.</p>
+      <div class="sce-chart" id="op-cost" data-source="runs_daily arms"></div>
+    </div>
+  </div>
+  <div class="sce-card">
+    <h3>Run log</h3>
+    <div class="sce-tablebox"><table class="sce-table" id="op-runs"><thead></thead><tbody></tbody></table></div>
+  </div>
+  <div class="sce-card">
+    <div class="sce-controls">
+      <label class="sce-field">Month<select id="op-wave"></select></label>
+      <label class="sce-field">Version<select id="op-arm"></select></label>
+    </div>
+    <h3>Answer quality by question</h3>
+    <p class="sce-note">Re-asked: the first answer broke a rule of the real survey (for example probabilities that do not add up to 100) and the question was asked again, as the SCE does. Failed: no usable answer after the re-ask.</p>
+    <div class="sce-tablebox"><table class="sce-table" id="op-q"><thead></thead><tbody></tbody></table></div>
+  </div>
+</template>
+
+<!-- ============ Method ============ -->
+<template id="tpl-method">
+  <div class="sce-split">
+    <div class="sce-prose">
+      <h3>What this is</h3>
+      <p>A daily replication of the New York Fed's Survey of Consumer Expectations (SCE), answered by a language model playing real SCE respondents. The questionnaire follows the SCE's monthly core survey: wording, answer formats, skip rules, and the checks that send a question back when an answer is invalid.</p>
+      <h3>Who answers</h3>
+      <p>A random draw of <span data-source="status" data-field="participants" data-row="0">—</span> people who joined the real SCE panel between 2016 and 2025 (seed 2222). Each persona is written from the person's own answers in their first SCE interview: age, gender, education, work, home, household, income, state and commuting zone, risk attitudes and numeracy test answers. The Panel page shows the mix of people.</p>
+      <h3>When</h3>
+      <p>Every month each person is interviewed once, on a day drawn at random for that month, so the panel is spread evenly over the month (about 40 people a day). A new draw each month means someone interviewed on the 5th this month can land on any day next month. The first month, which began on <span data-source="status" data-field="start_date" data-row="0">—</span>, was spread over the days left in it.</p>
+      <h3>Four versions</h3>
+      <ul>
+        <li><b>A</b>: no web search, no memory.</li>
+        <li><b>B</b>: reads the top <span data-source="status" data-field="web_results" data-row="0">—</span> web search results for that day's economic news, no memory.</li>
+        <li><b>C</b>: no web search; sees a summary of its own answers from earlier months.</li>
+        <li><b>D</b>: both.</li>
+      </ul>
+      <h3>Model</h3>
+      <p><span data-source="status" data-field="model" data-row="0">—</span> through OpenRouter, reasoning effort <span data-source="status" data-field="reasoning" data-row="0">—</span>, up to <span data-source="status" data-field="concurrency" data-row="0">—</span> interviews at once. Each interview is one conversation: the persona is the system message and each question is a new turn.</p>
+      <h3>How the statistics are computed</h3>
+      <ul>
+        <li>Point forecasts (inflation, income, spending, home prices) use the median, as the SCE does; probability questions use the mean.</li>
+        <li>Deflation and decrease answers are negative numbers.</li>
+        <li>“Density mean” is the average of the ten ranges' midpoints (±14, ±10, ±6, ±3, ±1), weighted by the points given to each. The SCE itself fits a distribution instead, so these are close but not identical.</li>
+        <li>Answers are unweighted.</li>
+        <li>Real-answer comparisons use the same people's own SCE interviews, computed the same way.</li>
+      </ul>
+      <h3>Data</h3>
+      <p>Everything (every answer, every prompt and model reply, the news read, costs) is saved in the project's GitHub repository after each daily run. This page is rebuilt from it every day.</p>
+    </div>
+    <div class="sce-card">
+      <h3>Current settings</h3>
+      <dl class="sce-kv">
+        <dt>Month</dt><dd data-source="status" data-field="wave" data-row="0">—</dd>
+        <dt>Panel</dt><dd data-source="status" data-field="participants" data-row="0">—</dd>
+        <dt>Versions</dt><dd data-source="status" data-field="arms" data-row="0">—</dd>
+        <dt>Model</dt><dd data-source="status" data-field="model" data-row="0">—</dd>
+        <dt>Memory</dt><dd data-source="status" data-field="memory_mode" data-row="0">—</dd>
+        <dt>Web results</dt><dd data-source="status" data-field="web_results" data-row="0">—</dd>
+        <dt>Interviews to date</dt><dd data-source="status" data-field="interviews_total" data-row="0">—</dd>
+        <dt>People to date</dt><dd data-source="status" data-field="people_total" data-row="0">—</dd>
+      </dl>
+    </div>
+  </div>
+</template>
+
+<script src="core.js"></script>
+<script src="charts.js"></script>
+<script src="pages.js"></script>

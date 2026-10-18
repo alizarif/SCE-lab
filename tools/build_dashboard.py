@@ -108,6 +108,13 @@ def labels(qn):
 
 def options(q):
     out = {}
+    if isinstance(q.get("options"), list):
+        for t in q["options"]:
+            try:
+                out[int(t[0])] = str(t[1])
+            except (TypeError, ValueError, IndexError):
+                pass
+        return out
     for part in str(q.get("options") or "").split("||"):
         if "=" in part:
             k, v = part.split("=", 1)
