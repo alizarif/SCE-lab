@@ -3,9 +3,17 @@
 name: Daily SCE survey
 
 on:
-  schedule:                      # 8:00 am New York time, every day. GitHub's clock is UTC, and New York is UTC-4 in
-    - cron: "0 12 * * *"         # summer and UTC-5 in winter, so the job starts at both 12:00 and 13:00 UTC and the
-    - cron: "0 13 * * *"         # first step lets it go on only from 8 am New York time (a run with nothing due does nothing)
+  # Around 8 am New York time, every day. GitHub's clock is UTC and New York is UTC-4 (summer) or UTC-5 (winter);
+  # the first step lets a run go on only from 8 am New York time. GitHub sometimes starts scheduled jobs late or skips
+  # one when it is busy, so there are several start times: the first one that runs does the day's interviews, the
+  # later ones find nothing due and stop after a few seconds.
+  schedule:
+    - cron: "7 12 * * *"
+    - cron: "37 12 * * *"
+    - cron: "7 13 * * *"
+    - cron: "37 13 * * *"
+    - cron: "7 14 * * *"
+    - cron: "7 16 * * *"
   workflow_dispatch:              # "Run workflow" button in the Actions tab
     inputs:
       dry_run:
