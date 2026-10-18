@@ -6,3 +6,4 @@ __pycache__/
 data_dry_run/
 reports_dry_run/
 .did_work
+dashboard/data/
