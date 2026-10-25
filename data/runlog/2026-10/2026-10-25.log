@@ -1,0 +1,16 @@
+2026-10-25 12:09:08 INFO === SCE monthly survey · run date 2026-10-25 · model openai/gpt-6-luna ===
+2026-10-25 12:09:09 INFO wave 2026-10 · 1200 participants · 80 scheduled today · 4 arms · 320 interviews to do (0 left over from earlier days)
+2026-10-25 12:09:09 INFO memory loaded for 0 person-arm pairs (summary mode)
+2026-10-25 12:10:10 INFO … 25 / 320 interviews done · $0.15 so far
+2026-10-25 12:10:48 INFO … 50 / 320 interviews done · $0.30 so far
+2026-10-25 12:11:28 INFO … 75 / 320 interviews done · $0.46 so far
+2026-10-25 12:12:02 INFO … 100 / 320 interviews done · $0.61 so far
+2026-10-25 12:12:41 INFO … 125 / 320 interviews done · $0.76 so far
+2026-10-25 12:13:17 INFO … 150 / 320 interviews done · $0.93 so far
+2026-10-25 12:13:54 INFO … 175 / 320 interviews done · $1.08 so far
+2026-10-25 12:14:23 INFO … 200 / 320 interviews done · $1.24 so far
+2026-10-25 12:15:07 INFO … 225 / 320 interviews done · $1.41 so far
+2026-10-25 12:15:40 INFO … 250 / 320 interviews done · $1.56 so far
+2026-10-25 12:16:14 INFO … 275 / 320 interviews done · $1.71 so far
+2026-10-25 12:17:01 INFO … 300 / 320 interviews done · $1.87 so far
+2026-10-25 12:18:28 INFO finished: 320 interviews done, 0 failed, 0 postponed to the next run · 0 question errors · cost $2.0108 · 9.3 min
