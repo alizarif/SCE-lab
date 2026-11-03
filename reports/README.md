@@ -1,6 +1,6 @@
 # SCE monthly survey · report
 
-Updated 2026-11-02 13:29 · model `openai/gpt-6-luna` · arms: `A_noweb_nomemory` (web off, memory off), `B_web_nomemory` (web on, memory off), `C_noweb_memory` (web off, memory on), `D_web_memory` (web on, memory on)
+Updated 2026-11-03 13:15 · model `openai/gpt-6-luna` · arms: `A_noweb_nomemory` (web off, memory off), `B_web_nomemory` (web on, memory off), `C_noweb_memory` (web off, memory on), `D_web_memory` (web on, memory on)
 
 ## Progress
 
@@ -10,61 +10,61 @@ Updated 2026-11-02 13:29 · model `openai/gpt-6-luna` · arms: `A_noweb_nomemory
 | 2026-10 | B_web_nomemory | 1200 | 1200 | 15 | 0 | 0 | 12.76 |
 | 2026-10 | C_noweb_memory | 1200 | 1200 | 15 | 0 | 0 | 2.33 |
 | 2026-10 | D_web_memory | 1200 | 1200 | 15 | 0 | 1 | 12.76 |
-| 2026-11 | A_noweb_nomemory | 80 | 80 | 2 | 0 | 0 | 0.21 |
-| 2026-11 | B_web_nomemory | 80 | 80 | 2 | 0 | 0 | 0.91 |
-| 2026-11 | C_noweb_memory | 80 | 80 | 2 | 0 | 0 | 0.24 |
-| 2026-11 | D_web_memory | 80 | 80 | 2 | 0 | 0 | 0.94 |
+| 2026-11 | A_noweb_nomemory | 120 | 120 | 3 | 0 | 0 | 0.32 |
+| 2026-11 | B_web_nomemory | 120 | 120 | 3 | 0 | 0 | 1.36 |
+| 2026-11 | C_noweb_memory | 120 | 120 | 3 | 0 | 0 | 0.36 |
+| 2026-11 | D_web_memory | 120 | 120 | 3 | 0 | 0 | 1.4 |
 
-Total cost so far: **$32.66**
+Total cost so far: **$33.80**
 
 ## 2026-11: headline items
 
 | item | label | arm | n | median | mean | sd | min | max |
 |---|---|---|---|---|---|---|---|---|
-| Q8v2part2 | Expected inflation rate (next 12 months) | A_noweb_nomemory | 80 | 3 | 3.24 | 0.25 | 3 | 3.5 |
-| Q8v2part2 | Expected inflation rate (next 12 months) | B_web_nomemory | 80 | 4.5 | 4.2 | 0.43 | 3.5 | 5.5 |
-| Q8v2part2 | Expected inflation rate (next 12 months) | C_noweb_memory | 80 | 3 | 3.24 | 0.25 | 3 | 3.5 |
-| Q8v2part2 | Expected inflation rate (next 12 months) | D_web_memory | 80 | 4.25 | 4.26 | 0.37 | 3.5 | 5.5 |
-| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | A_noweb_nomemory | 80 | 3.02 | 3.08 | 0.41 | 2.5 | 4.92 |
-| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | B_web_nomemory | 80 | 4.22 | 4.24 | 0.64 | 2.98 | 5.69 |
-| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | C_noweb_memory | 80 | 3 | 3.09 | 0.4 | 2.44 | 4.16 |
-| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | D_web_memory | 80 | 4.33 | 4.33 | 0.46 | 3.31 | 5.48 |
-| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | A_noweb_nomemory | 80 | 3 | 2.87 | 0.32 | 2.5 | 3.5 |
-| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | B_web_nomemory | 80 | 3 | 3.24 | 0.26 | 2.5 | 3.5 |
-| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | C_noweb_memory | 80 | 3 | 2.89 | 0.29 | 2.5 | 3.5 |
-| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | D_web_memory | 80 | 3.5 | 3.24 | 0.29 | 2.5 | 3.5 |
-| Q4new | Chance U.S. unemployment is higher (12 months) | A_noweb_nomemory | 80 | 55 | 54.69 | 3.59 | 45 | 60 |
-| Q4new | Chance U.S. unemployment is higher (12 months) | B_web_nomemory | 80 | 60 | 58.19 | 3.67 | 45 | 65 |
-| Q4new | Chance U.S. unemployment is higher (12 months) | C_noweb_memory | 80 | 55 | 53.75 | 4.1 | 40 | 60 |
-| Q4new | Chance U.S. unemployment is higher (12 months) | D_web_memory | 80 | 60 | 59.31 | 3.26 | 55 | 65 |
-| Q5new | Chance savings interest rates are higher (12 months) | A_noweb_nomemory | 80 | 50 | 50.44 | 3.49 | 45 | 60 |
-| Q5new | Chance savings interest rates are higher (12 months) | B_web_nomemory | 80 | 55 | 54.38 | 10.41 | 35 | 70 |
-| Q5new | Chance savings interest rates are higher (12 months) | C_noweb_memory | 80 | 50 | 50.75 | 3.29 | 40 | 60 |
-| Q5new | Chance savings interest rates are higher (12 months) | D_web_memory | 80 | 55 | 55.62 | 8.91 | 35 | 75 |
-| Q6new | Chance U.S. stock prices are higher (12 months) | A_noweb_nomemory | 80 | 60 | 57.56 | 4.64 | 50 | 65 |
-| Q6new | Chance U.S. stock prices are higher (12 months) | B_web_nomemory | 80 | 55 | 55.19 | 4.39 | 45 | 65 |
-| Q6new | Chance U.S. stock prices are higher (12 months) | C_noweb_memory | 80 | 60 | 57.88 | 4.76 | 45 | 65 |
-| Q6new | Chance U.S. stock prices are higher (12 months) | D_web_memory | 80 | 55 | 52.75 | 4.35 | 45 | 60 |
-| Q13new | Chance of losing main job (12 months) | A_noweb_nomemory | 49 | 10 | 12.35 | 4.34 | 5 | 25 |
-| Q13new | Chance of losing main job (12 months) | B_web_nomemory | 49 | 15 | 14.69 | 5.14 | 5 | 30 |
-| Q13new | Chance of losing main job (12 months) | C_noweb_memory | 49 | 10 | 12.04 | 4.2 | 5 | 25 |
-| Q13new | Chance of losing main job (12 months) | D_web_memory | 49 | 15 | 15.76 | 5.27 | 5 | 30 |
-| Q25v2part2 | Expected household income change (%) | A_noweb_nomemory | 80 | 3 | 2.72 | 1.23 | -2 | 5 |
-| Q25v2part2 | Expected household income change (%) | B_web_nomemory | 80 | 3 | 2.28 | 2.1 | -10 | 5 |
-| Q25v2part2 | Expected household income change (%) | C_noweb_memory | 80 | 3 | 2.48 | 1.97 | -10 | 5 |
-| Q25v2part2 | Expected household income change (%) | D_web_memory | 80 | 3 | 2.44 | 1.71 | -8 | 5 |
-| Q26v2part2 | Expected household spending change (%) | A_noweb_nomemory | 80 | 4 | 3.59 | 0.55 | 3 | 5 |
-| Q26v2part2 | Expected household spending change (%) | B_web_nomemory | 80 | 4 | 4.39 | 0.5 | 4 | 6 |
-| Q26v2part2 | Expected household spending change (%) | C_noweb_memory | 80 | 3.5 | 3.56 | 0.57 | 3 | 6 |
-| Q26v2part2 | Expected household spending change (%) | D_web_memory | 80 | 4.5 | 4.51 | 0.53 | 3 | 5.5 |
-| Q30new | Chance of missing a minimum debt payment (3 months) | A_noweb_nomemory | 80 | 5 | 7.14 | 5.4 | 2 | 25 |
-| Q30new | Chance of missing a minimum debt payment (3 months) | B_web_nomemory | 80 | 5 | 8.1 | 5.53 | 2 | 25 |
-| Q30new | Chance of missing a minimum debt payment (3 months) | C_noweb_memory | 80 | 5 | 6.91 | 5.08 | 0 | 35 |
-| Q30new | Chance of missing a minimum debt payment (3 months) | D_web_memory | 80 | 5 | 8.46 | 5.49 | 1 | 30 |
-| Q31v2part2 | Expected national home price change (%) | A_noweb_nomemory | 80 | 3 | 2.68 | 0.5 | 2 | 3.5 |
-| Q31v2part2 | Expected national home price change (%) | B_web_nomemory | 80 | 2 | 1.81 | 1.43 | -2 | 3.5 |
-| Q31v2part2 | Expected national home price change (%) | C_noweb_memory | 80 | 3 | 2.72 | 0.48 | 2 | 3.5 |
-| Q31v2part2 | Expected national home price change (%) | D_web_memory | 80 | 2 | 2.04 | 1.02 | -2 | 3 |
+| Q8v2part2 | Expected inflation rate (next 12 months) | A_noweb_nomemory | 120 | 3 | 3.22 | 0.25 | 3 | 3.5 |
+| Q8v2part2 | Expected inflation rate (next 12 months) | B_web_nomemory | 120 | 4 | 4.17 | 0.39 | 3.5 | 5.5 |
+| Q8v2part2 | Expected inflation rate (next 12 months) | C_noweb_memory | 120 | 3 | 3.2 | 0.25 | 3 | 3.5 |
+| Q8v2part2 | Expected inflation rate (next 12 months) | D_web_memory | 120 | 4 | 4.26 | 0.37 | 3.5 | 5.5 |
+| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | A_noweb_nomemory | 120 | 3.03 | 3.07 | 0.39 | 2.5 | 4.92 |
+| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | B_web_nomemory | 120 | 4.19 | 4.21 | 0.57 | 2.98 | 5.69 |
+| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | C_noweb_memory | 120 | 2.96 | 3.04 | 0.39 | 2.4 | 4.16 |
+| Q9_binmean | Inflation probabilities by range (next 12 months): mean using bin midpoints | D_web_memory | 120 | 4.32 | 4.32 | 0.48 | 3.31 | 5.52 |
+| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | A_noweb_nomemory | 120 | 3 | 2.85 | 0.32 | 2.5 | 3.5 |
+| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | B_web_nomemory | 120 | 3 | 3.21 | 0.26 | 2.5 | 3.5 |
+| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | C_noweb_memory | 120 | 3 | 2.87 | 0.3 | 2.5 | 3.5 |
+| Q9bv2part2 | Expected inflation rate (2–3 years ahead) | D_web_memory | 120 | 3 | 3.22 | 0.29 | 2.5 | 3.5 |
+| Q4new | Chance U.S. unemployment is higher (12 months) | A_noweb_nomemory | 120 | 55 | 54.33 | 3.61 | 45 | 60 |
+| Q4new | Chance U.S. unemployment is higher (12 months) | B_web_nomemory | 120 | 55 | 57.21 | 3.98 | 45 | 65 |
+| Q4new | Chance U.S. unemployment is higher (12 months) | C_noweb_memory | 120 | 55 | 53.75 | 4.16 | 40 | 60 |
+| Q4new | Chance U.S. unemployment is higher (12 months) | D_web_memory | 120 | 60 | 59.08 | 3.61 | 45 | 65 |
+| Q5new | Chance savings interest rates are higher (12 months) | A_noweb_nomemory | 120 | 50 | 50.33 | 3.53 | 40 | 60 |
+| Q5new | Chance savings interest rates are higher (12 months) | B_web_nomemory | 120 | 55 | 53.88 | 9.45 | 35 | 70 |
+| Q5new | Chance savings interest rates are higher (12 months) | C_noweb_memory | 120 | 50 | 50.46 | 3.43 | 40 | 60 |
+| Q5new | Chance savings interest rates are higher (12 months) | D_web_memory | 120 | 55 | 55.17 | 8.45 | 35 | 75 |
+| Q6new | Chance U.S. stock prices are higher (12 months) | A_noweb_nomemory | 120 | 60 | 57.75 | 4.76 | 50 | 65 |
+| Q6new | Chance U.S. stock prices are higher (12 months) | B_web_nomemory | 120 | 55 | 55.08 | 4.63 | 45 | 65 |
+| Q6new | Chance U.S. stock prices are higher (12 months) | C_noweb_memory | 120 | 60 | 57.67 | 4.98 | 45 | 65 |
+| Q6new | Chance U.S. stock prices are higher (12 months) | D_web_memory | 120 | 55 | 53.04 | 4.5 | 45 | 60 |
+| Q13new | Chance of losing main job (12 months) | A_noweb_nomemory | 72 | 10 | 12.71 | 5.17 | 5 | 40 |
+| Q13new | Chance of losing main job (12 months) | B_web_nomemory | 72 | 15 | 15.21 | 6.42 | 5 | 50 |
+| Q13new | Chance of losing main job (12 months) | C_noweb_memory | 72 | 10 | 12.22 | 4.66 | 5 | 35 |
+| Q13new | Chance of losing main job (12 months) | D_web_memory | 72 | 15 | 16.28 | 7.38 | 5 | 60 |
+| Q25v2part2 | Expected household income change (%) | A_noweb_nomemory | 120 | 3 | 2.8 | 1.3 | -2 | 10 |
+| Q25v2part2 | Expected household income change (%) | B_web_nomemory | 120 | 3 | 2.25 | 2.05 | -10 | 5 |
+| Q25v2part2 | Expected household income change (%) | C_noweb_memory | 120 | 3 | 2.39 | 2.11 | -10 | 5 |
+| Q25v2part2 | Expected household income change (%) | D_web_memory | 120 | 3 | 2.4 | 1.69 | -8 | 5 |
+| Q26v2part2 | Expected household spending change (%) | A_noweb_nomemory | 120 | 3.5 | 3.55 | 0.55 | 3 | 5 |
+| Q26v2part2 | Expected household spending change (%) | B_web_nomemory | 120 | 4 | 4.38 | 0.53 | 3 | 6 |
+| Q26v2part2 | Expected household spending change (%) | C_noweb_memory | 120 | 3.25 | 3.49 | 0.57 | 3 | 6 |
+| Q26v2part2 | Expected household spending change (%) | D_web_memory | 120 | 4 | 4.46 | 0.52 | 3 | 5.5 |
+| Q30new | Chance of missing a minimum debt payment (3 months) | A_noweb_nomemory | 120 | 5 | 6.98 | 5.56 | 2 | 35 |
+| Q30new | Chance of missing a minimum debt payment (3 months) | B_web_nomemory | 120 | 5 | 8.18 | 6.07 | 2 | 35 |
+| Q30new | Chance of missing a minimum debt payment (3 months) | C_noweb_memory | 120 | 5 | 6.94 | 6.4 | 0 | 50 |
+| Q30new | Chance of missing a minimum debt payment (3 months) | D_web_memory | 120 | 5 | 8.54 | 6.8 | 1 | 50 |
+| Q31v2part2 | Expected national home price change (%) | A_noweb_nomemory | 120 | 3 | 2.71 | 0.49 | 2 | 3.5 |
+| Q31v2part2 | Expected national home price change (%) | B_web_nomemory | 120 | 2 | 1.88 | 1.37 | -2 | 3.5 |
+| Q31v2part2 | Expected national home price change (%) | C_noweb_memory | 120 | 3 | 2.69 | 0.49 | 2 | 3.5 |
+| Q31v2part2 | Expected national home price change (%) | D_web_memory | 120 | 2 | 2.06 | 1.02 | -2 | 3 |
 
 All items, by day and by month: [stats_daily.csv](stats_daily.csv) · [stats_monthly.csv](stats_monthly.csv) · one row per interview: [wide/](wide/)
 
