@@ -9955,3 +9955,423 @@ date,arm,item,label,n,mean,sd,median,min,max,p25,p75
 2026-11-12,D_web_memory,Q9new2_bin8,,40,0.55,0.5038,1.0,0.0,1.0,0.0,1.0
 2026-11-12,D_web_memory,Q9new2_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2026-11-12,D_web_memory,Q9new2_binmean,Inflation probabilities by range (4–5 years ahead): mean using bin midpoints,40,3.448,0.2634,3.465,2.76,4.03,3.305,3.635
+2026-11-13,A_noweb_nomemory,C1_bin1,,40,2.35,0.5335,2.0,2.0,4.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,C1_bin10,,40,0.575,0.5006,1.0,0.0,1.0,0.0,1.0
+2026-11-13,A_noweb_nomemory,C1_bin2,,40,5.55,0.9594,5.0,4.0,8.0,5.0,6.25
+2026-11-13,A_noweb_nomemory,C1_bin3,,40,18.775,2.5368,20.0,15.0,25.0,18.0,20.0
+2026-11-13,A_noweb_nomemory,C1_bin4,,40,28.775,4.5092,30.0,20.0,35.0,25.0,31.25
+2026-11-13,A_noweb_nomemory,C1_bin5,,40,23.95,3.6371,25.0,20.0,30.0,20.0,25.0
+2026-11-13,A_noweb_nomemory,C1_bin6,,40,10.75,2.2043,10.0,7.0,15.0,10.0,12.0
+2026-11-13,A_noweb_nomemory,C1_bin7,,40,5.325,1.1633,5.0,3.0,8.0,5.0,6.0
+2026-11-13,A_noweb_nomemory,C1_bin8,,40,2.85,0.893,3.0,1.0,5.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,C1_bin9,,40,1.1,0.3789,1.0,1.0,3.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,C1_binmean,Home-price-change probabilities by range (12 months): mean using bin midpoints,40,2.4845,0.412,2.625,1.54,3.31,2.1975,2.7525
+2026-11-13,A_noweb_nomemory,C2,National home prices: increase or decrease? (2–3 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,C2part2,"Expected national home price change, 2–3 years ahead (%)",40,3.0,0.3397,3.0,2.0,3.5,3.0,3.0
+2026-11-13,A_noweb_nomemory,C3,U.S. government debt: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,C3part2,Expected change in U.S. government debt (%),40,5.0,0.0,5.0,5.0,5.0,5.0,5.0
+2026-11-13,A_noweb_nomemory,C4_1,,40,2.55,0.5038,3.0,2.0,3.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,C4_2,,40,3.5,0.5064,3.5,3.0,4.0,3.0,4.0
+2026-11-13,A_noweb_nomemory,C4_3,,40,4.525,0.5057,5.0,4.0,5.0,4.0,5.0
+2026-11-13,A_noweb_nomemory,C4_4,,40,4.025,0.1581,4.0,4.0,5.0,4.0,4.0
+2026-11-13,A_noweb_nomemory,C4_5,,40,3.3,0.4641,3.0,3.0,4.0,3.0,4.0
+2026-11-13,A_noweb_nomemory,C4_6,,40,3.9,1.0328,3.0,2.0,5.0,3.0,5.0
+2026-11-13,A_noweb_nomemory,ES2,Paid employees in own business,1,3.0,,3.0,3.0,3.0,3.0,3.0
+2026-11-13,A_noweb_nomemory,ES3new,Chance own business has more workers (12 months),1,40.0,,40.0,40.0,40.0,40.0,40.0
+2026-11-13,A_noweb_nomemory,ES4,"Self-employed hours per week, last 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,A_noweb_nomemory,ES5,"Self-employed hours per week, next 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,A_noweb_nomemory,Q1,Household finances vs 12 months ago,40,2.675,0.5256,3.0,2.0,4.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,Q11,Number of jobs,25,1.4,1.4434,1.0,0.0,8.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q12new,Works for someone else or self-employed,24,1.0833,0.2823,1.0,1.0,2.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q13new,Chance of losing main job (12 months),22,15.0,4.8795,15.0,10.0,25.0,10.0,20.0
+2026-11-13,A_noweb_nomemory,Q14new,Chance of leaving main job voluntarily (12 months),22,14.3182,4.9511,15.0,5.0,25.0,10.0,18.75
+2026-11-13,A_noweb_nomemory,Q15,Currently looking for a job?,2,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q16,Months unemployed,2,6.5,7.7782,6.5,1.0,12.0,3.75,9.25
+2026-11-13,A_noweb_nomemory,Q17new,Chance of finding an acceptable job (12 months),2,50.0,21.2132,50.0,35.0,65.0,42.5,57.5
+2026-11-13,A_noweb_nomemory,Q18new,Chance of finding an acceptable job (3 months),2,20.0,14.1421,20.0,10.0,30.0,15.0,25.0
+2026-11-13,A_noweb_nomemory,Q1a,Inflation or deflation? (12 months starting 4 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q1apart2,Expected inflation rate (4–5 years ahead),40,2.925,0.3311,3.0,2.5,3.5,2.5,3.0
+2026-11-13,A_noweb_nomemory,Q2,Household finances 12 months from now,40,3.325,0.5256,3.0,2.0,4.0,3.0,4.0
+2026-11-13,A_noweb_nomemory,Q20new,Chance of starting to look for work (12 months),12,5.1667,5.2541,3.5,2.0,20.0,2.0,5.0
+2026-11-13,A_noweb_nomemory,Q21new,Chance of starting to look for work (3 months),12,1.9167,1.505,1.0,1.0,5.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q22new,Chance of finding a job within 3 months if job lost now,22,63.8636,11.2262,67.5,40.0,85.0,60.0,70.0
+2026-11-13,A_noweb_nomemory,Q23v2,Earnings change in same job: increase or decrease? (12 months),24,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q23v2part2,Expected earnings change in same job (%),24,2.8333,0.4815,3.0,2.0,4.0,3.0,3.0
+2026-11-13,A_noweb_nomemory,Q24_bin1,,24,2.2917,0.8587,2.0,2.0,5.0,2.0,2.0
+2026-11-13,A_noweb_nomemory,Q24_bin10,,24,0.375,0.4945,0.0,0.0,1.0,0.0,1.0
+2026-11-13,A_noweb_nomemory,Q24_bin2,,24,4.9167,1.5012,5.0,3.0,10.0,4.75,5.0
+2026-11-13,A_noweb_nomemory,Q24_bin3,,24,16.0833,3.5499,15.0,10.0,25.0,15.0,18.5
+2026-11-13,A_noweb_nomemory,Q24_bin4,,24,31.0417,5.385,30.0,20.0,40.0,25.0,35.0
+2026-11-13,A_noweb_nomemory,Q24_bin5,,24,30.4583,5.4292,30.0,20.0,40.0,27.25,35.0
+2026-11-13,A_noweb_nomemory,Q24_bin6,,24,8.7083,2.4931,8.0,5.0,15.0,7.0,10.0
+2026-11-13,A_noweb_nomemory,Q24_bin7,,24,3.4167,1.2825,3.0,2.0,7.0,2.75,4.0
+2026-11-13,A_noweb_nomemory,Q24_bin8,,24,1.7917,1.0206,2.0,1.0,5.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q24_bin9,,24,0.9167,0.5036,1.0,0.0,2.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q24_binmean,Earnings-growth probabilities by range (12 months): mean using bin midpoints,24,2.5721,0.5992,2.64,1.13,3.73,2.2,2.935
+2026-11-13,A_noweb_nomemory,Q25v2,Household income: increase or decrease? (12 months),40,1.05,0.3162,1.0,1.0,3.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q25v2part2,Expected household income change (%),40,2.675,1.366,3.0,-2.0,5.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,Q26v2,Household spending: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q26v2part2,Expected household spending change (%),40,3.7125,0.619,4.0,3.0,5.0,3.0,4.0
+2026-11-13,A_noweb_nomemory,Q27v2,Taxes at same income: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q27v2part2,Expected change in taxes (%),40,2.0,0.2265,2.0,1.0,3.0,2.0,2.0
+2026-11-13,A_noweb_nomemory,Q28,Credit access vs 12 months ago,40,2.0,0.0,2.0,2.0,2.0,2.0,2.0
+2026-11-13,A_noweb_nomemory,Q29,Credit access 12 months from now,40,2.85,0.3616,3.0,2.0,3.0,3.0,3.0
+2026-11-13,A_noweb_nomemory,Q3,Chance of moving home (12 months),40,5.775,5.5769,5.0,2.0,25.0,2.0,5.0
+2026-11-13,A_noweb_nomemory,Q30new,Chance of missing a minimum debt payment (3 months),40,8.75,7.4378,5.0,2.0,30.0,5.0,10.0
+2026-11-13,A_noweb_nomemory,Q31v2,National home prices: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q31v2part2,Expected national home price change (%),40,2.625,0.4903,3.0,2.0,3.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,Q4new,Chance U.S. unemployment is higher (12 months),40,54.0,4.2667,55.0,40.0,65.0,55.0,55.0
+2026-11-13,A_noweb_nomemory,Q5new,Chance savings interest rates are higher (12 months),40,49.625,3.4692,50.0,40.0,60.0,50.0,50.0
+2026-11-13,A_noweb_nomemory,Q6new,Chance U.S. stock prices are higher (12 months),40,56.5,4.5573,55.0,50.0,65.0,55.0,60.0
+2026-11-13,A_noweb_nomemory,Q8v2,Inflation or deflation? (next 12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q8v2part2,Expected inflation rate (next 12 months),40,3.275,0.2519,3.5,3.0,3.5,3.0,3.5
+2026-11-13,A_noweb_nomemory,Q9_bin1,,40,1.35,0.6622,1.0,1.0,4.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q9_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9_bin2,,40,2.85,1.4597,2.0,1.0,8.0,2.0,3.0
+2026-11-13,A_noweb_nomemory,Q9_bin3,,40,17.35,5.5125,15.0,10.0,30.0,12.0,22.75
+2026-11-13,A_noweb_nomemory,Q9_bin4,,40,48.875,4.5302,49.0,42.0,60.0,45.0,50.0
+2026-11-13,A_noweb_nomemory,Q9_bin5,,40,24.0,5.2428,25.0,11.0,35.0,20.75,27.0
+2026-11-13,A_noweb_nomemory,Q9_bin6,,40,4.175,1.8242,4.0,1.0,8.0,3.0,5.0
+2026-11-13,A_noweb_nomemory,Q9_bin7,,40,1.05,0.4501,1.0,0.0,2.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q9_bin8,,40,0.35,0.483,0.0,0.0,1.0,0.0,1.0
+2026-11-13,A_noweb_nomemory,Q9_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9_binmean,Inflation probabilities by range (next 12 months): mean using bin midpoints,40,3.127,0.4479,3.005,2.5,4.12,2.85,3.4025
+2026-11-13,A_noweb_nomemory,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q9bv2part2,Expected inflation rate (2–3 years ahead),40,2.925,0.3311,3.0,2.5,3.5,2.5,3.0
+2026-11-13,A_noweb_nomemory,Q9c_bin1,,40,1.4,0.4961,1.0,1.0,2.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q9c_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9c_bin2,,40,3.425,1.1959,3.0,2.0,6.0,2.75,4.0
+2026-11-13,A_noweb_nomemory,Q9c_bin3,,40,19.25,4.2351,20.0,12.0,30.0,15.0,22.0
+2026-11-13,A_noweb_nomemory,Q9c_bin4,,40,44.95,3.3201,45.0,40.0,55.0,45.0,45.0
+2026-11-13,A_noweb_nomemory,Q9c_bin5,,40,23.5,4.2184,23.5,14.0,32.0,21.0,25.0
+2026-11-13,A_noweb_nomemory,Q9c_bin6,,40,5.35,1.8886,5.0,2.0,9.0,4.0,7.0
+2026-11-13,A_noweb_nomemory,Q9c_bin7,,40,1.3,0.5639,1.0,0.0,2.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q9c_bin8,,40,0.75,0.4385,1.0,0.0,1.0,0.75,1.0
+2026-11-13,A_noweb_nomemory,Q9c_bin9,,40,0.075,0.2667,0.0,0.0,1.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9c_binmean,Inflation probabilities by range (2–3 years ahead): mean using bin midpoints,40,3.132,0.398,3.08,2.44,4.03,2.8075,3.38
+2026-11-13,A_noweb_nomemory,Q9new2_bin1,,40,1.55,0.7143,1.0,1.0,3.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin2,,40,3.625,1.4085,3.0,2.0,7.0,2.75,5.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin3,,40,19.525,4.1756,20.0,12.0,30.0,15.0,22.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin4,,40,44.225,3.8993,45.0,35.0,55.0,41.5,45.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin5,,40,23.325,4.299,23.5,14.0,32.0,20.0,25.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin6,,40,5.475,1.8945,5.5,2.0,9.0,4.0,7.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin7,,40,1.4,0.5905,1.0,0.0,2.0,1.0,2.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin8,,40,0.775,0.4229,1.0,0.0,1.0,1.0,1.0
+2026-11-13,A_noweb_nomemory,Q9new2_bin9,,40,0.1,0.3038,0.0,0.0,1.0,0.0,0.0
+2026-11-13,A_noweb_nomemory,Q9new2_binmean,Inflation probabilities by range (4–5 years ahead): mean using bin midpoints,40,3.1578,0.4052,3.195,2.44,4.03,2.8075,3.3825
+2026-11-13,B_web_nomemory,C1_bin1,,40,2.1,0.3789,2.0,1.0,3.0,2.0,2.0
+2026-11-13,B_web_nomemory,C1_bin10,,40,0.6,0.4961,1.0,0.0,1.0,0.0,1.0
+2026-11-13,B_web_nomemory,C1_bin2,,40,5.15,0.7355,5.0,3.0,8.0,5.0,5.0
+2026-11-13,B_web_nomemory,C1_bin3,,40,17.275,2.4389,18.0,12.0,22.0,15.0,20.0
+2026-11-13,B_web_nomemory,C1_bin4,,40,25.925,3.5038,25.0,18.0,35.0,25.0,27.25
+2026-11-13,B_web_nomemory,C1_bin5,,40,26.025,3.8795,25.0,18.0,35.0,25.0,30.0
+2026-11-13,B_web_nomemory,C1_bin6,,40,12.575,2.6975,12.0,8.0,20.0,12.0,13.5
+2026-11-13,B_web_nomemory,C1_bin7,,40,6.25,2.1691,6.0,3.0,15.0,5.0,7.0
+2026-11-13,B_web_nomemory,C1_bin8,,40,3.025,1.1655,3.0,1.0,7.0,2.75,3.0
+2026-11-13,B_web_nomemory,C1_bin9,,40,1.075,0.3499,1.0,1.0,3.0,1.0,1.0
+2026-11-13,B_web_nomemory,C1_binmean,Home-price-change probabilities by range (12 months): mean using bin midpoints,40,2.1972,0.4529,2.225,0.81,3.1,2.01,2.4
+2026-11-13,B_web_nomemory,C2,National home prices: increase or decrease? (2–3 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,C2part2,"Expected national home price change, 2–3 years ahead (%)",40,3.2,0.2481,3.0,3.0,3.5,3.0,3.5
+2026-11-13,B_web_nomemory,C3,U.S. government debt: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,C3part2,Expected change in U.S. government debt (%),40,5.0,0.0,5.0,5.0,5.0,5.0,5.0
+2026-11-13,B_web_nomemory,C4_1,,40,4.3,0.9115,5.0,3.0,5.0,3.0,5.0
+2026-11-13,B_web_nomemory,C4_2,,40,4.6,0.5905,5.0,4.0,6.0,4.0,5.0
+2026-11-13,B_web_nomemory,C4_3,,40,5.45,0.597,5.0,5.0,7.0,5.0,6.0
+2026-11-13,B_web_nomemory,C4_4,,40,4.175,0.3848,4.0,4.0,5.0,4.0,4.0
+2026-11-13,B_web_nomemory,C4_5,,40,3.8,0.4641,4.0,3.0,5.0,4.0,4.0
+2026-11-13,B_web_nomemory,C4_6,,40,4.2,1.2026,5.0,2.0,8.0,3.0,5.0
+2026-11-13,B_web_nomemory,ES2,Paid employees in own business,1,3.0,,3.0,3.0,3.0,3.0,3.0
+2026-11-13,B_web_nomemory,ES3new,Chance own business has more workers (12 months),1,45.0,,45.0,45.0,45.0,45.0,45.0
+2026-11-13,B_web_nomemory,ES4,"Self-employed hours per week, last 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,B_web_nomemory,ES5,"Self-employed hours per week, next 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,B_web_nomemory,Q1,Household finances vs 12 months ago,40,2.325,0.4743,2.0,2.0,3.0,2.0,3.0
+2026-11-13,B_web_nomemory,Q11,Number of jobs,25,1.4,1.4434,1.0,0.0,8.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q12new,Works for someone else or self-employed,24,1.0833,0.2823,1.0,1.0,2.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q13new,Chance of losing main job (12 months),22,16.8182,4.2386,15.0,10.0,25.0,15.0,20.0
+2026-11-13,B_web_nomemory,Q14new,Chance of leaving main job voluntarily (12 months),22,15.2273,5.2275,15.0,10.0,25.0,10.0,20.0
+2026-11-13,B_web_nomemory,Q15,Currently looking for a job?,2,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q16,Months unemployed,2,6.5,7.7782,6.5,1.0,12.0,3.75,9.25
+2026-11-13,B_web_nomemory,Q17new,Chance of finding an acceptable job (12 months),2,55.0,21.2132,55.0,40.0,70.0,47.5,62.5
+2026-11-13,B_web_nomemory,Q18new,Chance of finding an acceptable job (3 months),2,25.0,14.1421,25.0,15.0,35.0,20.0,30.0
+2026-11-13,B_web_nomemory,Q1a,Inflation or deflation? (12 months starting 4 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q1apart2,Expected inflation rate (4–5 years ahead),40,3.235,0.2466,3.1,3.0,3.5,3.0,3.5
+2026-11-13,B_web_nomemory,Q2,Household finances 12 months from now,40,3.0,0.5064,3.0,2.0,4.0,3.0,3.0
+2026-11-13,B_web_nomemory,Q20new,Chance of starting to look for work (12 months),12,6.0,6.6878,3.5,2.0,20.0,2.0,5.0
+2026-11-13,B_web_nomemory,Q21new,Chance of starting to look for work (3 months),12,2.0,1.4771,1.5,1.0,5.0,1.0,2.0
+2026-11-13,B_web_nomemory,Q22new,Chance of finding a job within 3 months if job lost now,22,62.5,12.2231,70.0,40.0,80.0,52.5,70.0
+2026-11-13,B_web_nomemory,Q23v2,Earnings change in same job: increase or decrease? (12 months),24,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q23v2part2,Expected earnings change in same job (%),24,2.9375,0.4499,3.0,2.0,4.0,3.0,3.0
+2026-11-13,B_web_nomemory,Q24_bin1,,24,2.1667,0.4815,2.0,1.0,3.0,2.0,2.0
+2026-11-13,B_web_nomemory,Q24_bin10,,24,0.1667,0.3807,0.0,0.0,1.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q24_bin2,,24,5.5417,1.2151,5.0,4.0,8.0,5.0,5.0
+2026-11-13,B_web_nomemory,Q24_bin3,,24,18.625,3.2679,19.0,15.0,25.0,15.0,20.0
+2026-11-13,B_web_nomemory,Q24_bin4,,24,32.125,4.1422,35.0,23.0,40.0,30.0,35.0
+2026-11-13,B_web_nomemory,Q24_bin5,,24,27.2083,4.4719,25.0,20.0,35.0,25.0,30.0
+2026-11-13,B_web_nomemory,Q24_bin6,,24,8.4167,2.448,8.0,5.0,15.0,6.0,10.0
+2026-11-13,B_web_nomemory,Q24_bin7,,24,3.25,0.9441,3.0,2.0,5.0,3.0,4.0
+2026-11-13,B_web_nomemory,Q24_bin8,,24,1.5,0.6594,1.0,1.0,3.0,1.0,2.0
+2026-11-13,B_web_nomemory,Q24_bin9,,24,1.0,0.2949,1.0,0.0,2.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q24_binmean,Earnings-growth probabilities by range (12 months): mean using bin midpoints,24,2.8158,0.4285,2.82,1.95,3.53,2.5425,3.03
+2026-11-13,B_web_nomemory,Q25v2,Household income: increase or decrease? (12 months),40,1.1,0.4414,1.0,1.0,3.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q25v2part2,Expected household income change (%),40,2.7625,2.3342,3.0,-5.0,10.0,2.0,3.0
+2026-11-13,B_web_nomemory,Q26v2,Household spending: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q26v2part2,Expected household spending change (%),40,4.7375,0.5546,5.0,4.0,6.0,4.0,5.0
+2026-11-13,B_web_nomemory,Q27v2,Taxes at same income: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q27v2part2,Expected change in taxes (%),40,2.0875,0.2747,2.0,2.0,3.0,2.0,2.0
+2026-11-13,B_web_nomemory,Q28,Credit access vs 12 months ago,40,1.25,0.4385,1.0,1.0,2.0,1.0,1.25
+2026-11-13,B_web_nomemory,Q29,Credit access 12 months from now,40,1.875,0.3349,2.0,1.0,2.0,2.0,2.0
+2026-11-13,B_web_nomemory,Q3,Chance of moving home (12 months),40,4.55,2.9348,5.0,2.0,15.0,2.0,5.0
+2026-11-13,B_web_nomemory,Q30new,Chance of missing a minimum debt payment (3 months),40,9.375,7.3019,5.0,2.0,35.0,5.0,11.25
+2026-11-13,B_web_nomemory,Q31v2,National home prices: increase or decrease? (12 months),40,1.15,0.5335,1.0,1.0,3.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q31v2part2,Expected national home price change (%),40,1.8875,1.2115,2.0,-2.5,3.0,2.0,2.5
+2026-11-13,B_web_nomemory,Q4new,Chance U.S. unemployment is higher (12 months),40,53.875,6.1485,55.0,40.0,65.0,55.0,55.0
+2026-11-13,B_web_nomemory,Q5new,Chance savings interest rates are higher (12 months),40,68.0,4.051,65.0,60.0,75.0,65.0,70.0
+2026-11-13,B_web_nomemory,Q6new,Chance U.S. stock prices are higher (12 months),40,53.625,4.3835,55.0,45.0,65.0,50.0,55.0
+2026-11-13,B_web_nomemory,Q8v2,Inflation or deflation? (next 12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q8v2part2,Expected inflation rate (next 12 months),40,4.7625,0.4527,4.5,4.0,6.5,4.5,5.0
+2026-11-13,B_web_nomemory,Q9_bin1,,40,2.225,0.8619,2.0,1.0,5.0,2.0,2.0
+2026-11-13,B_web_nomemory,Q9_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9_bin2,,40,7.65,3.5917,8.0,5.0,25.0,5.0,8.0
+2026-11-13,B_web_nomemory,Q9_bin3,,40,46.25,6.6361,45.0,35.0,60.0,40.0,50.0
+2026-11-13,B_web_nomemory,Q9_bin4,,40,30.825,5.7105,30.0,15.0,40.0,28.75,35.0
+2026-11-13,B_web_nomemory,Q9_bin5,,40,10.7,3.5748,12.0,2.0,17.0,8.0,12.25
+2026-11-13,B_web_nomemory,Q9_bin6,,40,1.725,0.8767,2.0,0.0,4.0,1.75,2.0
+2026-11-13,B_web_nomemory,Q9_bin7,,40,0.625,0.4903,1.0,0.0,1.0,0.0,1.0
+2026-11-13,B_web_nomemory,Q9_bin8,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9_binmean,Inflation probabilities by range (next 12 months): mean using bin midpoints,40,4.8473,0.5206,4.75,4.18,6.69,4.4425,5.195
+2026-11-13,B_web_nomemory,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q9bv2part2,Expected inflation rate (2–3 years ahead),40,3.325,0.2415,3.5,3.0,3.5,3.0,3.5
+2026-11-13,B_web_nomemory,Q9c_bin1,,40,1.225,0.4797,1.0,1.0,3.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q9c_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9c_bin2,,40,4.075,1.0715,4.0,3.0,8.0,3.0,4.25
+2026-11-13,B_web_nomemory,Q9c_bin3,,40,26.05,2.396,25.0,20.0,32.0,25.0,25.75
+2026-11-13,B_web_nomemory,Q9c_bin4,,40,44.325,3.3158,45.0,40.0,55.0,41.5,45.0
+2026-11-13,B_web_nomemory,Q9c_bin5,,40,19.5,2.7735,20.0,12.0,25.0,17.75,20.0
+2026-11-13,B_web_nomemory,Q9c_bin6,,40,3.75,0.9268,4.0,1.0,6.0,3.0,4.0
+2026-11-13,B_web_nomemory,Q9c_bin7,,40,0.875,0.5158,1.0,0.0,2.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q9c_bin8,,40,0.2,0.4051,0.0,0.0,1.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9c_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9c_binmean,Inflation probabilities by range (2–3 years ahead): mean using bin midpoints,40,3.591,0.228,3.52,3.25,4.24,3.3975,3.745
+2026-11-13,B_web_nomemory,Q9new2_bin1,,40,1.225,0.4797,1.0,1.0,3.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q9new2_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9new2_bin2,,40,3.975,1.1873,4.0,2.0,8.0,3.0,4.25
+2026-11-13,B_web_nomemory,Q9new2_bin3,,40,25.1,2.5399,25.0,20.0,32.0,25.0,25.0
+2026-11-13,B_web_nomemory,Q9new2_bin4,,40,44.4,3.365,45.0,40.0,55.0,41.5,45.0
+2026-11-13,B_web_nomemory,Q9new2_bin5,,40,20.225,2.7408,20.0,13.0,25.0,19.5,22.0
+2026-11-13,B_web_nomemory,Q9new2_bin6,,40,3.925,1.0225,4.0,1.0,6.0,3.0,4.25
+2026-11-13,B_web_nomemory,Q9new2_bin7,,40,0.925,0.5723,1.0,0.0,2.0,1.0,1.0
+2026-11-13,B_web_nomemory,Q9new2_bin8,,40,0.2,0.4051,0.0,0.0,1.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9new2_bin9,,40,0.025,0.1581,0.0,0.0,1.0,0.0,0.0
+2026-11-13,B_web_nomemory,Q9new2_binmean,Inflation probabilities by range (4–5 years ahead): mean using bin midpoints,40,3.5278,0.2548,3.52,2.94,3.97,3.36,3.725
+2026-11-13,C_noweb_memory,C1_bin1,,40,1.95,0.9858,2.0,0.0,5.0,1.0,2.0
+2026-11-13,C_noweb_memory,C1_bin10,,40,0.225,0.4229,0.0,0.0,1.0,0.0,0.0
+2026-11-13,C_noweb_memory,C1_bin2,,40,5.575,1.9857,5.0,2.0,10.0,5.0,7.0
+2026-11-13,C_noweb_memory,C1_bin3,,40,19.35,3.1829,20.0,15.0,25.0,17.25,20.0
+2026-11-13,C_noweb_memory,C1_bin4,,40,33.325,5.101,35.0,25.0,45.0,30.0,35.0
+2026-11-13,C_noweb_memory,C1_bin5,,40,24.4,4.3371,25.0,20.0,38.0,20.0,25.0
+2026-11-13,C_noweb_memory,C1_bin6,,40,8.6,2.5399,9.0,4.0,15.0,6.75,10.0
+2026-11-13,C_noweb_memory,C1_bin7,,40,3.825,1.723,3.0,1.0,7.0,2.0,5.0
+2026-11-13,C_noweb_memory,C1_bin8,,40,1.875,1.0667,1.5,0.0,4.0,1.0,3.0
+2026-11-13,C_noweb_memory,C1_bin9,,40,0.875,0.4043,1.0,0.0,2.0,1.0,1.0
+2026-11-13,C_noweb_memory,C1_binmean,Home-price-change probabilities by range (12 months): mean using bin midpoints,40,2.803,0.558,2.785,1.75,3.97,2.3325,3.1375
+2026-11-13,C_noweb_memory,C2,National home prices: increase or decrease? (2–3 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,C2part2,"Expected national home price change, 2–3 years ahead (%)",40,2.6875,0.515,3.0,2.0,3.5,2.0,3.0
+2026-11-13,C_noweb_memory,C3,U.S. government debt: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,C3part2,Expected change in U.S. government debt (%),40,4.6,0.7089,5.0,3.0,5.0,4.0,5.0
+2026-11-13,C_noweb_memory,C4_1,,40,2.825,0.4319,3.0,2.0,3.5,3.0,3.0
+2026-11-13,C_noweb_memory,C4_2,,40,3.3375,0.4584,3.0,3.0,4.0,3.0,4.0
+2026-11-13,C_noweb_memory,C4_3,,40,4.275,0.5057,4.0,3.0,5.0,4.0,5.0
+2026-11-13,C_noweb_memory,C4_4,,40,3.925,0.2667,4.0,3.0,4.0,4.0,4.0
+2026-11-13,C_noweb_memory,C4_5,,40,3.1625,0.3469,3.0,3.0,4.0,3.0,3.0
+2026-11-13,C_noweb_memory,C4_6,,40,3.7,0.9923,3.0,2.0,5.0,3.0,5.0
+2026-11-13,C_noweb_memory,ES2,Paid employees in own business,1,3.0,,3.0,3.0,3.0,3.0,3.0
+2026-11-13,C_noweb_memory,ES3new,Chance own business has more workers (12 months),1,45.0,,45.0,45.0,45.0,45.0,45.0
+2026-11-13,C_noweb_memory,ES4,"Self-employed hours per week, last 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,C_noweb_memory,ES5,"Self-employed hours per week, next 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,C_noweb_memory,Q1,Household finances vs 12 months ago,40,2.8,0.4641,3.0,2.0,4.0,3.0,3.0
+2026-11-13,C_noweb_memory,Q11,Number of jobs,25,1.4,1.4434,1.0,0.0,8.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q12new,Works for someone else or self-employed,24,1.0833,0.2823,1.0,1.0,2.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q13new,Chance of losing main job (12 months),22,14.3182,5.1859,10.0,10.0,25.0,10.0,20.0
+2026-11-13,C_noweb_memory,Q14new,Chance of leaving main job voluntarily (12 months),22,14.0909,6.2937,10.0,5.0,30.0,10.0,20.0
+2026-11-13,C_noweb_memory,Q15,Currently looking for a job?,2,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q16,Months unemployed,2,6.5,7.7782,6.5,1.0,12.0,3.75,9.25
+2026-11-13,C_noweb_memory,Q17new,Chance of finding an acceptable job (12 months),2,57.5,10.6066,57.5,50.0,65.0,53.75,61.25
+2026-11-13,C_noweb_memory,Q18new,Chance of finding an acceptable job (3 months),2,25.0,7.0711,25.0,20.0,30.0,22.5,27.5
+2026-11-13,C_noweb_memory,Q1a,Inflation or deflation? (12 months starting 4 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q1apart2,Expected inflation rate (4–5 years ahead),40,3.0,0.3203,3.0,2.5,3.5,3.0,3.0
+2026-11-13,C_noweb_memory,Q2,Household finances 12 months from now,40,3.4,0.4961,3.0,3.0,4.0,3.0,4.0
+2026-11-13,C_noweb_memory,Q20new,Chance of starting to look for work (12 months),12,5.8333,6.4784,5.0,2.0,25.0,2.0,5.0
+2026-11-13,C_noweb_memory,Q21new,Chance of starting to look for work (3 months),12,2.3333,2.4985,2.0,1.0,10.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q22new,Chance of finding a job within 3 months if job lost now,22,63.8636,9.9919,65.0,40.0,80.0,60.0,70.0
+2026-11-13,C_noweb_memory,Q23v2,Earnings change in same job: increase or decrease? (12 months),24,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q23v2part2,Expected earnings change in same job (%),24,2.9792,0.5413,3.0,2.0,4.0,3.0,3.0
+2026-11-13,C_noweb_memory,Q24_bin1,,24,2.4583,1.0624,2.0,1.0,5.0,2.0,2.25
+2026-11-13,C_noweb_memory,Q24_bin10,,24,0.2083,0.4149,0.0,0.0,1.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q24_bin2,,24,5.4167,2.0624,5.0,2.0,10.0,5.0,5.0
+2026-11-13,C_noweb_memory,Q24_bin3,,24,17.25,5.3426,15.0,10.0,30.0,15.0,20.0
+2026-11-13,C_noweb_memory,Q24_bin4,,24,31.4583,4.8542,31.0,20.0,40.0,30.0,35.0
+2026-11-13,C_noweb_memory,Q24_bin5,,24,28.625,7.6999,25.5,10.0,45.0,25.0,35.0
+2026-11-13,C_noweb_memory,Q24_bin6,,24,8.75,2.893,10.0,3.0,15.0,7.75,10.0
+2026-11-13,C_noweb_memory,Q24_bin7,,24,3.375,1.3453,3.0,1.0,7.0,3.0,4.0
+2026-11-13,C_noweb_memory,Q24_bin8,,24,1.5,0.6594,1.0,1.0,3.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q24_bin9,,24,0.9583,0.3586,1.0,0.0,2.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q24_binmean,Earnings-growth probabilities by range (12 months): mean using bin midpoints,24,2.7471,0.7999,2.65,1.45,4.68,2.29,2.9875
+2026-11-13,C_noweb_memory,Q25v2,Household income: increase or decrease? (12 months),40,1.1,0.4414,1.0,1.0,3.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q25v2part2,Expected household income change (%),40,2.7625,2.1483,3.0,-5.0,10.0,2.0,3.125
+2026-11-13,C_noweb_memory,Q26v2,Household spending: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q26v2part2,Expected household spending change (%),40,3.575,0.6845,3.0,3.0,5.0,3.0,4.0
+2026-11-13,C_noweb_memory,Q27v2,Taxes at same income: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q27v2part2,Expected change in taxes (%),40,1.975,0.2519,2.0,1.0,2.5,2.0,2.0
+2026-11-13,C_noweb_memory,Q28,Credit access vs 12 months ago,40,2.0,0.0,2.0,2.0,2.0,2.0,2.0
+2026-11-13,C_noweb_memory,Q29,Credit access 12 months from now,40,2.9,0.3038,3.0,2.0,3.0,3.0,3.0
+2026-11-13,C_noweb_memory,Q3,Chance of moving home (12 months),40,4.975,3.7655,5.0,2.0,20.0,2.0,5.0
+2026-11-13,C_noweb_memory,Q30new,Chance of missing a minimum debt payment (3 months),40,8.3,6.5367,5.0,1.0,25.0,5.0,10.0
+2026-11-13,C_noweb_memory,Q31v2,National home prices: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q31v2part2,Expected national home price change (%),40,2.65,0.5335,3.0,2.0,3.5,2.0,3.0
+2026-11-13,C_noweb_memory,Q4new,Chance U.S. unemployment is higher (12 months),40,54.875,3.4876,55.0,50.0,60.0,53.75,55.0
+2026-11-13,C_noweb_memory,Q5new,Chance savings interest rates are higher (12 months),40,50.75,2.6675,50.0,45.0,55.0,50.0,50.0
+2026-11-13,C_noweb_memory,Q6new,Chance U.S. stock prices are higher (12 months),40,56.5,4.6959,55.0,45.0,65.0,55.0,60.0
+2026-11-13,C_noweb_memory,Q8v2,Inflation or deflation? (next 12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q8v2part2,Expected inflation rate (next 12 months),40,3.1875,0.2451,3.0,3.0,3.5,3.0,3.5
+2026-11-13,C_noweb_memory,Q9_bin1,,40,1.3,0.9661,1.0,0.0,5.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q9_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9_bin2,,40,2.75,1.3914,2.0,1.0,8.0,2.0,3.0
+2026-11-13,C_noweb_memory,Q9_bin3,,40,16.9,4.7437,15.0,10.0,30.0,15.0,20.0
+2026-11-13,C_noweb_memory,Q9_bin4,,40,48.425,4.9297,46.5,38.0,58.0,45.0,52.75
+2026-11-13,C_noweb_memory,Q9_bin5,,40,24.375,4.0426,25.0,16.0,35.0,22.0,26.25
+2026-11-13,C_noweb_memory,Q9_bin6,,40,4.625,1.9039,4.0,1.0,10.0,4.0,5.0
+2026-11-13,C_noweb_memory,Q9_bin7,,40,1.175,0.5495,1.0,0.0,3.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q9_bin8,,40,0.45,0.5038,0.0,0.0,1.0,0.0,1.0
+2026-11-13,C_noweb_memory,Q9_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9_binmean,Inflation probabilities by range (next 12 months): mean using bin midpoints,40,3.059,0.3914,2.965,2.34,4.19,2.84,3.28
+2026-11-13,C_noweb_memory,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,C_noweb_memory,Q9bv2part2,Expected inflation rate (2–3 years ahead),40,3.0,0.3203,3.0,2.5,3.5,3.0,3.0
+2026-11-13,C_noweb_memory,Q9c_bin1,,40,1.35,0.8638,1.0,0.0,5.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q9c_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9c_bin2,,40,3.25,1.5973,3.0,1.0,10.0,2.0,4.0
+2026-11-13,C_noweb_memory,Q9c_bin3,,40,18.025,3.8061,18.0,12.0,25.0,15.0,20.0
+2026-11-13,C_noweb_memory,Q9c_bin4,,40,44.825,4.4254,45.0,35.0,55.0,41.5,45.75
+2026-11-13,C_noweb_memory,Q9c_bin5,,40,24.55,3.7345,25.0,18.0,32.0,22.0,28.0
+2026-11-13,C_noweb_memory,Q9c_bin6,,40,5.7,1.9108,6.0,2.0,12.0,4.75,7.0
+2026-11-13,C_noweb_memory,Q9c_bin7,,40,1.525,0.64,1.5,0.0,3.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q9c_bin8,,40,0.675,0.4743,1.0,0.0,1.0,0.0,1.0
+2026-11-13,C_noweb_memory,Q9c_bin9,,40,0.1,0.3038,0.0,0.0,1.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9c_binmean,Inflation probabilities by range (2–3 years ahead): mean using bin midpoints,40,3.0325,0.3642,2.995,2.44,3.96,2.75,3.27
+2026-11-13,C_noweb_memory,Q9new2_bin1,,40,1.475,0.9868,1.0,0.0,5.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q9new2_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9new2_bin2,,40,3.475,1.6792,3.0,1.0,10.0,2.0,4.0
+2026-11-13,C_noweb_memory,Q9new2_bin3,,40,18.325,3.7716,18.0,12.0,25.0,15.0,20.0
+2026-11-13,C_noweb_memory,Q9new2_bin4,,40,44.025,4.4289,45.0,33.0,55.0,40.0,45.0
+2026-11-13,C_noweb_memory,Q9new2_bin5,,40,24.5,3.8697,25.0,18.0,32.0,22.0,28.0
+2026-11-13,C_noweb_memory,Q9new2_bin6,,40,5.8,1.8838,6.0,2.0,12.0,4.75,7.0
+2026-11-13,C_noweb_memory,Q9new2_bin7,,40,1.55,0.6385,2.0,0.0,3.0,1.0,2.0
+2026-11-13,C_noweb_memory,Q9new2_bin8,,40,0.725,0.4522,1.0,0.0,1.0,0.0,1.0
+2026-11-13,C_noweb_memory,Q9new2_bin9,,40,0.125,0.3349,0.0,0.0,1.0,0.0,0.0
+2026-11-13,C_noweb_memory,Q9new2_binmean,Inflation probabilities by range (4–5 years ahead): mean using bin midpoints,40,3.0588,0.3724,3.045,2.44,3.96,2.75,3.3025
+2026-11-13,D_web_memory,C1_bin1,,40,1.775,0.4797,2.0,1.0,3.0,1.75,2.0
+2026-11-13,D_web_memory,C1_bin10,,40,0.4,0.4961,0.0,0.0,1.0,0.0,1.0
+2026-11-13,D_web_memory,C1_bin2,,40,5.175,1.4122,5.0,3.0,8.0,5.0,5.0
+2026-11-13,D_web_memory,C1_bin3,,40,19.0,3.7622,20.0,10.0,25.0,17.75,20.0
+2026-11-13,D_web_memory,C1_bin4,,40,28.4,5.0015,30.0,18.0,35.0,25.0,30.75
+2026-11-13,D_web_memory,C1_bin5,,40,24.825,3.7682,25.0,20.0,35.0,21.75,25.0
+2026-11-13,D_web_memory,C1_bin6,,40,11.1,3.7676,10.0,5.0,20.0,8.0,12.0
+2026-11-13,D_web_memory,C1_bin7,,40,5.575,2.8902,5.0,2.0,15.0,4.0,6.0
+2026-11-13,D_web_memory,C1_bin8,,40,2.65,1.6572,2.0,1.0,7.0,2.0,3.0
+2026-11-13,D_web_memory,C1_bin9,,40,1.1,0.5454,1.0,0.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,C1_binmean,Home-price-change probabilities by range (12 months): mean using bin midpoints,40,2.403,0.7409,2.41,0.5,3.55,2.2175,2.795
+2026-11-13,D_web_memory,C2,National home prices: increase or decrease? (2–3 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,C2part2,"Expected national home price change, 2–3 years ahead (%)",40,2.5375,0.4721,2.5,2.0,3.5,2.0,3.0
+2026-11-13,D_web_memory,C3,U.S. government debt: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,C3part2,Expected change in U.S. government debt (%),40,5.0,0.0,5.0,5.0,5.0,5.0,5.0
+2026-11-13,D_web_memory,C4_1,,40,4.8,1.067,5.0,3.0,8.0,5.0,5.0
+2026-11-13,D_web_memory,C4_2,,40,4.725,0.4522,5.0,4.0,5.0,4.0,5.0
+2026-11-13,D_web_memory,C4_3,,40,5.325,0.4743,5.0,5.0,6.0,5.0,6.0
+2026-11-13,D_web_memory,C4_4,,40,4.15,0.3616,4.0,4.0,5.0,4.0,4.0
+2026-11-13,D_web_memory,C4_5,,40,3.675,0.4743,4.0,3.0,4.0,3.0,4.0
+2026-11-13,D_web_memory,C4_6,,40,4.275,1.0124,5.0,3.0,6.0,3.0,5.0
+2026-11-13,D_web_memory,ES2,Paid employees in own business,1,3.0,,3.0,3.0,3.0,3.0,3.0
+2026-11-13,D_web_memory,ES3new,Chance own business has more workers (12 months),1,35.0,,35.0,35.0,35.0,35.0,35.0
+2026-11-13,D_web_memory,ES4,"Self-employed hours per week, last 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,D_web_memory,ES5,"Self-employed hours per week, next 4 weeks",2,42.5,3.5355,42.5,40.0,45.0,41.25,43.75
+2026-11-13,D_web_memory,Q1,Household finances vs 12 months ago,40,2.1,0.3789,2.0,1.0,3.0,2.0,2.0
+2026-11-13,D_web_memory,Q11,Number of jobs,25,1.44,1.4166,1.0,1.0,8.0,1.0,1.0
+2026-11-13,D_web_memory,Q12new,Works for someone else or self-employed,25,1.08,0.2769,1.0,1.0,2.0,1.0,1.0
+2026-11-13,D_web_memory,Q13new,Chance of losing main job (12 months),23,17.1739,5.6056,15.0,10.0,30.0,15.0,20.0
+2026-11-13,D_web_memory,Q14new,Chance of leaving main job voluntarily (12 months),23,13.6957,4.8189,15.0,5.0,25.0,10.0,15.0
+2026-11-13,D_web_memory,Q15,Currently looking for a job?,2,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q16,Months unemployed,2,6.5,7.7782,6.5,1.0,12.0,3.75,9.25
+2026-11-13,D_web_memory,Q17new,Chance of finding an acceptable job (12 months),2,57.5,10.6066,57.5,50.0,65.0,53.75,61.25
+2026-11-13,D_web_memory,Q18new,Chance of finding an acceptable job (3 months),2,25.0,7.0711,25.0,20.0,30.0,22.5,27.5
+2026-11-13,D_web_memory,Q1a,Inflation or deflation? (12 months starting 4 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q1apart2,Expected inflation rate (4–5 years ahead),40,3.2525,0.2918,3.2,2.5,4.0,3.0,3.5
+2026-11-13,D_web_memory,Q2,Household finances 12 months from now,40,2.975,0.3572,3.0,2.0,4.0,3.0,3.0
+2026-11-13,D_web_memory,Q20new,Chance of starting to look for work (12 months),11,5.0,5.1962,5.0,2.0,20.0,2.0,5.0
+2026-11-13,D_web_memory,Q21new,Chance of starting to look for work (3 months),11,1.8182,1.1677,2.0,1.0,5.0,1.0,2.0
+2026-11-13,D_web_memory,Q22new,Chance of finding a job within 3 months if job lost now,23,61.7391,11.242,65.0,30.0,80.0,57.5,70.0
+2026-11-13,D_web_memory,Q23v2,Earnings change in same job: increase or decrease? (12 months),25,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q23v2part2,Expected earnings change in same job (%),25,2.92,0.4252,3.0,2.0,3.5,3.0,3.0
+2026-11-13,D_web_memory,Q24_bin1,,25,2.16,0.5538,2.0,1.0,3.0,2.0,2.0
+2026-11-13,D_web_memory,Q24_bin10,,25,0.2,0.4082,0.0,0.0,1.0,0.0,0.0
+2026-11-13,D_web_memory,Q24_bin2,,25,5.08,1.115,5.0,3.0,7.0,5.0,5.0
+2026-11-13,D_web_memory,Q24_bin3,,25,18.2,4.0517,20.0,10.0,25.0,15.0,20.0
+2026-11-13,D_web_memory,Q24_bin4,,25,32.44,4.4448,35.0,25.0,40.0,30.0,35.0
+2026-11-13,D_web_memory,Q24_bin5,,25,28.6,5.6199,25.0,23.0,40.0,25.0,33.0
+2026-11-13,D_web_memory,Q24_bin6,,25,8.12,2.4379,8.0,4.0,12.0,6.0,10.0
+2026-11-13,D_web_memory,Q24_bin7,,25,3.12,0.9274,3.0,1.0,5.0,3.0,4.0
+2026-11-13,D_web_memory,Q24_bin8,,25,1.28,0.4583,1.0,1.0,2.0,1.0,2.0
+2026-11-13,D_web_memory,Q24_bin9,,25,0.8,0.4082,1.0,0.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q24_binmean,Earnings-growth probabilities by range (12 months): mean using bin midpoints,25,2.802,0.5357,2.95,1.73,3.59,2.51,3.12
+2026-11-13,D_web_memory,Q25v2,Household income: increase or decrease? (12 months),40,1.1,0.4414,1.0,1.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,Q25v2part2,Expected household income change (%),40,2.7125,2.0813,3.0,-5.0,10.0,2.0,3.0
+2026-11-13,D_web_memory,Q26v2,Household spending: increase or decrease? (12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q26v2part2,Expected household spending change (%),40,4.775,0.4929,5.0,4.0,6.0,4.375,5.0
+2026-11-13,D_web_memory,Q27v2,Taxes at same income: increase or decrease? (12 months),40,1.05,0.3162,1.0,1.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,Q27v2part2,Expected change in taxes (%),40,2.1375,0.7844,2.0,-2.0,3.0,2.0,2.5
+2026-11-13,D_web_memory,Q28,Credit access vs 12 months ago,40,1.6,0.4961,2.0,1.0,2.0,1.0,2.0
+2026-11-13,D_web_memory,Q29,Credit access 12 months from now,40,1.525,0.5057,2.0,1.0,2.0,1.0,2.0
+2026-11-13,D_web_memory,Q3,Chance of moving home (12 months),40,4.75,3.2324,5.0,2.0,15.0,2.0,5.0
+2026-11-13,D_web_memory,Q30new,Chance of missing a minimum debt payment (3 months),40,10.4,8.2735,10.0,1.0,35.0,5.0,11.25
+2026-11-13,D_web_memory,Q31v2,National home prices: increase or decrease? (12 months),40,1.25,0.6699,1.0,1.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,Q31v2part2,Expected national home price change (%),40,1.725,1.4891,2.0,-2.0,3.0,2.0,2.5
+2026-11-13,D_web_memory,Q4new,Chance U.S. unemployment is higher (12 months),40,56.75,4.319,55.0,45.0,65.0,55.0,60.0
+2026-11-13,D_web_memory,Q5new,Chance savings interest rates are higher (12 months),40,65.0,5.4302,65.0,55.0,75.0,60.0,70.0
+2026-11-13,D_web_memory,Q6new,Chance U.S. stock prices are higher (12 months),40,51.0,5.2134,50.0,40.0,65.0,50.0,55.0
+2026-11-13,D_web_memory,Q8v2,Inflation or deflation? (next 12 months),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q8v2part2,Expected inflation rate (next 12 months),40,4.7375,0.4235,5.0,4.0,5.5,4.5,5.0
+2026-11-13,D_web_memory,Q9_bin1,,40,2.225,1.2707,2.0,1.0,8.0,1.0,3.0
+2026-11-13,D_web_memory,Q9_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,D_web_memory,Q9_bin2,,40,8.05,3.1211,8.0,3.0,15.0,5.75,10.0
+2026-11-13,D_web_memory,Q9_bin3,,40,45.35,8.1447,45.0,30.0,60.0,39.5,50.0
+2026-11-13,D_web_memory,Q9_bin4,,40,31.25,5.8955,30.0,22.0,45.0,27.75,35.0
+2026-11-13,D_web_memory,Q9_bin5,,40,10.4,4.3015,8.5,4.0,20.0,7.0,13.25
+2026-11-13,D_web_memory,Q9_bin6,,40,1.9,0.7089,2.0,0.0,4.0,2.0,2.0
+2026-11-13,D_web_memory,Q9_bin7,,40,0.725,0.4522,1.0,0.0,1.0,0.0,1.0
+2026-11-13,D_web_memory,Q9_bin8,,40,0.1,0.3038,0.0,0.0,1.0,0.0,0.0
+2026-11-13,D_web_memory,Q9_bin9,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,D_web_memory,Q9_binmean,Inflation probabilities by range (next 12 months): mean using bin midpoints,40,4.8322,0.5519,4.875,3.67,6.02,4.5625,5.235
+2026-11-13,D_web_memory,Q9bv2,Inflation or deflation? (12 months starting 2 years ahead),40,1.0,0.0,1.0,1.0,1.0,1.0,1.0
+2026-11-13,D_web_memory,Q9bv2part2,Expected inflation rate (2–3 years ahead),40,3.3125,0.3139,3.5,2.5,4.0,3.0,3.5
+2026-11-13,D_web_memory,Q9c_bin1,,40,1.2,0.5164,1.0,0.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,Q9c_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,D_web_memory,Q9c_bin2,,40,3.975,1.423,4.0,2.0,8.0,3.0,4.25
+2026-11-13,D_web_memory,Q9c_bin3,,40,27.125,4.7566,26.5,15.0,38.0,25.0,30.0
+2026-11-13,D_web_memory,Q9c_bin4,,40,43.1,3.7266,45.0,35.0,55.0,40.0,45.0
+2026-11-13,D_web_memory,Q9c_bin5,,40,19.35,4.3474,20.0,11.0,28.0,15.75,22.0
+2026-11-13,D_web_memory,Q9c_bin6,,40,3.925,1.3085,4.0,2.0,8.0,3.0,5.0
+2026-11-13,D_web_memory,Q9c_bin7,,40,1.0,0.5547,1.0,0.0,2.0,1.0,1.0
+2026-11-13,D_web_memory,Q9c_bin8,,40,0.275,0.4522,0.0,0.0,1.0,0.0,1.0
+2026-11-13,D_web_memory,Q9c_bin9,,40,0.05,0.2207,0.0,0.0,1.0,0.0,0.0
+2026-11-13,D_web_memory,Q9c_binmean,Inflation probabilities by range (2–3 years ahead): mean using bin midpoints,40,3.5888,0.3835,3.56,2.74,4.59,3.36,3.7
+2026-11-13,D_web_memory,Q9new2_bin1,,40,1.2,0.5164,1.0,0.0,3.0,1.0,1.0
+2026-11-13,D_web_memory,Q9new2_bin10,,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2026-11-13,D_web_memory,Q9new2_bin2,,40,3.875,1.3241,4.0,2.0,8.0,3.0,5.0
+2026-11-13,D_web_memory,Q9new2_bin3,,40,26.6,4.5506,25.0,15.0,38.0,25.0,30.0
+2026-11-13,D_web_memory,Q9new2_bin4,,40,43.125,3.8108,45.0,35.0,55.0,40.0,45.0
+2026-11-13,D_web_memory,Q9new2_bin5,,40,19.8,4.1584,20.0,11.0,28.0,17.0,22.25
+2026-11-13,D_web_memory,Q9new2_bin6,,40,4.025,1.3299,4.0,2.0,8.0,3.0,5.0
+2026-11-13,D_web_memory,Q9new2_bin7,,40,1.05,0.597,1.0,0.0,2.0,1.0,1.0
+2026-11-13,D_web_memory,Q9new2_bin8,,40,0.275,0.4522,0.0,0.0,1.0,0.0,1.0
+2026-11-13,D_web_memory,Q9new2_bin9,,40,0.05,0.2207,0.0,0.0,1.0,0.0,0.0
+2026-11-13,D_web_memory,Q9new2_binmean,Inflation probabilities by range (4–5 years ahead): mean using bin midpoints,40,3.55,0.3636,3.495,2.74,4.59,3.3475,3.67
