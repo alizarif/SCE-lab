@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC, DATA, OUT = ROOT / "site", ROOT / "dashboard" / "data", ROOT / "_site"
-FILES = ["arms", "choices", "density", "groups", "news", "pair_bins", "pair_fit", "panel", "quality", "questions",
+FILES = ["arms", "choices", "density", "groups", "news", "pair_bins", "pair_fit", "panel", "quality", "queries", "questions",
          "real_history", "runs_daily", "schedule", "stats_daily", "stats_monthly", "stats_mtd", "status"]
 
 HEAD = """<!doctype html>

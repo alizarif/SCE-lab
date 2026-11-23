@@ -45,11 +45,19 @@ def load_config(path=None):
         a["id"] = str(a["id"])
         a["web"] = bool(a.get("web"))
         a["memory"] = bool(a.get("memory"))
+        a["web_mode"] = str(a.get("web_mode") or "generic") if a["web"] else None
+        sw = a.get("start_wave")
+        a["start_wave"] = (f"{sw:%Y-%m}" if isinstance(sw, date) else str(sw)[:7]) if sw else None
     cfg.setdefault("web", {})
     cfg.setdefault("memory", {})
     cfg.setdefault("prompts", {})
     cfg.setdefault("report", {})
     return cfg
+
+
+def arms_for(cfg, wave):
+    """The arms that run in a month (YYYY-MM): an arm with a start_wave is skipped before that month."""
+    return [a for a in cfg["arms"] if not a.get("start_wave") or a["start_wave"] <= wave]
 
 
 def setup_logging(run_date, to_file=True):

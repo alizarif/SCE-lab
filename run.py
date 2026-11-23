@@ -48,6 +48,7 @@ def main():
         make_report(cfg)
         return
 
+    from sce_survey.config import arms_for
     from sce_survey.runner import load_participants
     from sce_survey.schedule import month_plan, today
     d = d or today(cfg)
@@ -56,9 +57,10 @@ def main():
         y, m = map(int, (a.month or f"{d:%Y-%m}").split("-"))
         plan = month_plan(cfg, list(load_participants(cfg)), y, m)
         c = Counter(plan.values())
-        print(f"{y}-{m:02d}: {len(plan)} people × {len(cfg['arms'])} arms, over {len(c)} days")
+        n_arms = len(arms_for(cfg, f"{y}-{m:02d}"))
+        print(f"{y}-{m:02d}: {len(plan)} people × {n_arms} arms, over {len(c)} days")
         for day in sorted(c):
-            print(f"  {day}  {c[day]:4d} people  ({c[day] * len(cfg['arms'])} interviews)")
+            print(f"  {day}  {c[day]:4d} people  ({c[day] * n_arms} interviews)")
         return
 
     if a.command == "status":
@@ -70,7 +72,7 @@ def main():
         cur = lg[(lg["wave"] == wave) & (lg["status"] == "complete")]
         due = sum(1 for x in plan.values() if x <= d)
         print(f"{wave} · today {d} · enabled={cfg.get('enabled', True)}")
-        for arm in cfg["arms"]:
+        for arm in arms_for(cfg, wave):
             n = (cur["arm"] == arm["id"]).sum()
             print(f"  {arm['id']:<20} done {n:5d} · due by today {due:5d} · month total {len(plan):5d}")
         print(f"cost this month ${cur['cost_usd'].sum():.2f} · all months ${lg['cost_usd'].sum():.2f} "

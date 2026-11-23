@@ -13,7 +13,8 @@ built from real SCE respondents. It runs every day on GitHub, on its own, until 
 * **When:** every day at 8 am New York time. Each month every person is interviewed once: all 1,200 are spread evenly
   over the survey days of the month (from October 17: 15 days × 80 people; November: 30 days × 40 people). The day
   is drawn at random again every month, so someone interviewed on the 5th this month can be on any day next month.
-* **Four types (arms):** every person is interviewed in all four, as separate conversations on the same day:
+* **Five types (arms):** every person is interviewed in all of them, as separate conversations on the same day
+  (arm E starts in December 2026):
 
   | arm | web search | remembers last months |
   |---|---|---|
@@ -21,3 +22,9 @@ built from real SCE respondents. It runs every day on GitHub, on its own, until 
   | `B_web_nomemory` | yes, top 10 results | no |
   | `C_noweb_memory` | no | yes |
   | `D_web_memory` | yes, top 10 results | yes |
+  | `E_customweb_nomemory` | yes, top 10 results of the persona's own 1–3 searches | no |
+
+  B and D all read the same search for today's U.S. economic news. In E the persona first writes its own searches
+  ("QUERY: …", about what matters in its own life); each search runs on its own with the same engine, the 10 results
+  are split across them (4+3+3), and the persona notes what matters to it before the survey starts. The searches are
+  saved in the interview log (`web_queries`) and shown on the dashboard's News page.

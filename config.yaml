@@ -35,8 +35,11 @@ concurrency: 30               # interviews run in parallel (each sends one reque
 time_budget_minutes: 300      # stop starting new interviews after this (GitHub stops a job at 6 h); leftovers run next day
 max_consecutive_errors: 25    # stop the run if the API keeps failing (e.g. no credit left)
 
-# ── the four types (arms) ───────────────────────────────────────────────
+# ── the types (arms) ────────────────────────────────────────────────────
 # Every participant is interviewed once a month in EVERY arm (separate conversations, same day).
+# web_mode: generic = everyone reads the same search (web.prompt) | custom = each persona writes its own searches (web.custom)
+# start_wave: first month (YYYY-MM) the arm runs; earlier months skip it. An arm that starts later treats people
+#             already interviewed in any arm as repeat respondents, so it gets the same questions as the other arms.
 arms:
   - id: A_noweb_nomemory
     web: false
@@ -50,6 +53,11 @@ arms:
   - id: D_web_memory
     web: true
     memory: true
+  - id: E_customweb_nomemory
+    web: true
+    web_mode: custom          # the persona decides what to search for (see web.custom below)
+    memory: false
+    start_wave: 2026-12
 
 # ── web search (arms with web: true) ────────────────────────────────────
 web:
@@ -64,6 +72,21 @@ web:
     Latest U.S. economy news as of {DATE}: inflation and prices, jobs and unemployment, interest rates and the Federal Reserve, the stock market, the housing market, gas prices.
 
     Before the survey starts, you look at today's news, as above. Read what the search found. Then write 3 to 5 short bullet points on what you learned that matters to you. After that the survey begins.
+
+  # web_mode: custom (arm E): same engine, same total results and same page length as above; only the searches differ.
+  custom:
+    max_queries: 3            # the persona writes 1 to 3 searches; the max_results above are split across them (4+3+3)
+    query_chars: 150          # longest search kept
+    query_prompt: |
+      Today's date is {DATE}. Before the survey starts, you look up today's news on the web.
+      Think about your own life: where you live, your work, your household, your money. What would you look up?
+      Write 1 to 3 short web searches, one per line, each starting with "QUERY:". Nothing else.
+    read_prompt: |
+      What your search found:
+
+      {RESULTS}
+
+      Read what the search found. Then write 3 to 5 short bullet points on what you learned that matters to you. After that the survey begins.
 
 # ── memory (arms with memory: true) ─────────────────────────────────────
 memory:

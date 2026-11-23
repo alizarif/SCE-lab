@@ -6,7 +6,7 @@ const C = S.charts;
 dash.calc('effects', {
   inputs: ['stats_monthly', 'questions'],
   title: 'Web and memory effects',
-  description: 'Per month and question: web minus no web, and memory minus no memory, in the question’s headline statistic (median for point forecasts, mean for probabilities).',
+  description: 'Per month and question: web minus no web, memory minus no memory, and own searches minus the common news search (E − B), in the question’s headline statistic (median for point forecasts, mean for probabilities).',
   fn: (stats_monthly, questions) => {
     const pct = new Map(questions.filter((q) => q.key && q.unit === '%').map((q) => [q.item, q.stat]));
     const by = new Map(stats_monthly.map((r) => [r.wave + '|' + r.arm + '|' + r.item, r]));
@@ -14,10 +14,10 @@ dash.calc('effects', {
     for (const w of new Set(stats_monthly.map((r) => r.wave))) {
       for (const [item, stat] of pct) {
         const v = (arm) => (by.get(w + '|' + arm + '|' + item) || {})[stat];
-        const [a, b, c, d] = ['A_noweb_nomemory', 'B_web_nomemory', 'C_noweb_memory', 'D_web_memory'].map(v);
+        const [a, b, c, d, e] = ['A_noweb_nomemory', 'B_web_nomemory', 'C_noweb_memory', 'D_web_memory', 'E_customweb_nomemory'].map(v);
         if (a == null && b == null) continue;
         const diff = (x, y) => (x == null || y == null ? null : Math.round((x - y) * 100) / 100);
-        out.push({ wave: w, item, stat, web_without_memory: diff(b, a), web_with_memory: diff(d, c), memory_without_web: diff(c, a), memory_with_web: diff(d, b) });
+        out.push({ wave: w, item, stat, web_without_memory: diff(b, a), web_with_memory: diff(d, c), memory_without_web: diff(c, a), memory_with_web: diff(d, b), own_search: diff(e, b) });
       }
     }
     return out;
@@ -27,7 +27,7 @@ dash.calc('effects', {
 dash.calc('news_domains', {
   inputs: ['news'],
   title: 'Search results per news site',
-  description: 'How many times each site appeared in the web search results the personas read this month (all days, both web versions).',
+  description: 'How many times each site appeared in the web search results the personas read this month (all days, all web versions).',
   fn: (news) => {
     const m = new Map();
     for (const r of news) m.set(r.domain, (m.get(r.domain) || 0) + r.interviews);
@@ -221,6 +221,24 @@ S.pages.arms = {
     };
     draw('ar-web', 'web_without_memory', 'web_with_memory', 'Without memory (B − A)', 'With memory (D − C)', 'B_web_nomemory');
     draw('ar-mem', 'memory_without_web', 'memory_with_web', 'Without web (C − A)', 'With web (D − B)', 'C_noweb_memory');
+    // own searches (E) against the common news search (B)
+    const E = 'E_customweb_nomemory';
+    const eArm = S.get('arms').rows.find((x) => x.arm === E);
+    const eWait = eArm && eArm.start_wave && w && w < eArm.start_wave;
+    {
+      const box = root.querySelector('#ar-own');
+      if (eff.status !== 'ok') { if (eff.status === 'error') S.empty(box, 'Failed to load', true); else box.classList.add('dash-skeleton'); }
+      else {
+        box.classList.remove('dash-skeleton');
+        C.dotRows(box, {
+          zero: true, unit: '', fmt: S.fmtPP, tickFmt: (t) => S.fmtPP(t).replace(' pp', ''),
+          rows: effRows.filter((r) => r.own_search != null).map((r) => ({ item: r.item, label: `${S.label(r.item)} · ${statName(r.stat)}`,
+            values: [{ name: 'Own searches (E − B)', color: S.armColor(E), v: r.own_search }] })),
+          onPick: (r) => { S.state.armItem = r.item; S.redraw(); },
+          emptyText: eWait ? `Version E starts in ${S.fmtWave(eArm.start_wave)}.` : 'No answers for this month yet.',
+        });
+      }
+    }
     // 2×2 matrix
     const isel = root.querySelector('#ar-item');
     const qs = S.get('questions');
@@ -248,6 +266,8 @@ S.pages.arms = {
       S.el('div', { class: 'sce-mh' }, ''), S.el('div', { class: 'sce-mh' }, 'No memory'), S.el('div', { class: 'sce-mh' }, 'Memory'),
       S.el('div', { class: 'sce-mh' }, 'No web'), cell('A_noweb_nomemory'), cell('C_noweb_memory'),
       S.el('div', { class: 'sce-mh' }, 'Web'), cell('B_web_nomemory'), cell('D_web_memory'),
+      S.el('div', { class: 'sce-mh' }, 'Own web search'), cell(E),
+      S.el('div', { class: 'sce-mc sce-note' }, 'Not in the design: E runs without memory only.'),
     );
     root.querySelector('#ar-matrix-note').textContent = `${S.label(item)}: ${statName(stat)} answer in ${S.fmtWave(w)}, by version.`;
   },
@@ -449,7 +469,7 @@ S.pages.news = {
     const n = S.get('news');
     const dsel = root.querySelector('#nw-date'), asel = root.querySelector('#nw-arm');
     if (n.ok) {
-      S.setOptions(dsel, Array.from(new Set(n.rows.map((r) => r.date))).sort().reverse().map((d) => ({ value: d, label: S.fmtDay(d) })));
+      S.setOptions(dsel, Array.from(new Set(n.rows.concat(S.get('queries').rows).map((r) => r.date))).sort().reverse().map((d) => ({ value: d, label: S.fmtDay(d) })));
       S.setOptions(asel, Array.from(new Set(n.rows.map((r) => r.arm))).sort().map((a) => ({ value: a, label: S.armName(a) })));
     }
     const tb = root.querySelector('#nw-table');
@@ -468,6 +488,34 @@ S.pages.news = {
       return tr;
     }));
     if (n.ok && !rows.length) { const tr = S.el('tr'); tr.append(S.el('td', { colspan: '2', class: 'sce-note' }, 'No web searches this day.')); tb.tBodies[0].replaceChildren(tr); }
+    // what the personas of version E searched for
+    const qd = S.get('queries');
+    const qt = root.querySelector('#nw-q-table');
+    const qn = root.querySelector('#nw-q-note');
+    const qArm = S.get('arms').rows.find((x) => x.web_mode === 'custom');
+    const qRows = qd.ok ? qd.rows.filter((r) => r.date === dsel.value).sort((a, b) => b.interviews - a.interviews) : [];
+    qt.tBodies[0].replaceChildren(...qRows.map((r) => {
+      const where = { date: r.date, arm: r.arm, query: r.query };
+      const tr = S.el('tr');
+      tr.append(S.mark(S.el('td', null, r.query), 'queries', 'query', where),
+        S.mark(S.el('td', { class: 'sce-num' }, S.fmtInt(r.interviews)), 'queries', 'interviews', where));
+      return tr;
+    }));
+    qn.replaceChildren();
+    if (qRows.length) {
+      const r0 = qRows[0], where = { date: r0.date, arm: r0.arm, query: r0.query };
+      qn.append(S.mark(S.el('span', null, S.fmtInt(r0.interviews_day)), 'queries', 'interviews_day', where),
+        document.createTextNode(' interviews wrote '),
+        S.mark(S.el('span', null, S.fmtInt(r0.searches_day)), 'queries', 'searches_day', where),
+        document.createTextNode(' searches, '),
+        S.mark(S.el('span', null, S.fmtInt(r0.distinct_day)), 'queries', 'distinct_day', where),
+        document.createTextNode(' of them different. Shown: the most common ones.'));
+    } else if (qd.ok) {
+      const tr = S.el('tr');
+      const wait = qArm && qArm.start_wave && (!dsel.value || dsel.value.slice(0, 7) < qArm.start_wave);
+      tr.append(S.el('td', { colspan: '2', class: 'sce-note' }, wait ? `Version E starts in ${S.fmtWave(qArm.start_wave)}.` : 'No searches written this day.'));
+      qt.tBodies[0].replaceChildren(tr);
+    }
     const box = root.querySelector('#nw-dom');
     const nd = dash.data('news_domains');
     if (nd.status !== 'ok') { if (nd.status === 'error') S.empty(box, 'Failed to load', true); else box.classList.add('dash-skeleton'); }

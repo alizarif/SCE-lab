@@ -36,7 +36,7 @@ class LLM:
         if self.client:
             await self.client.aclose()
 
-    def body(self, messages, web=False):
+    def body(self, messages, web=False, max_results=None):
         c = self.cfg
         b = {"model": c["model"], "messages": messages, "max_tokens": c.get("max_tokens") or 400,
              "usage": {"include": True}}
@@ -50,15 +50,15 @@ class LLM:
             b["provider"] = c["provider"]
         if web:
             w = c.get("web", {})
-            plug = {"id": "web", "max_results": int(w.get("max_results", 10))}
+            plug = {"id": "web", "max_results": int(max_results or w.get("max_results", 10))}
             if w.get("engine"):
                 plug["engine"] = w["engine"]
             b["plugins"] = [plug]
         return b
 
-    async def chat(self, messages, web=False):
-        """→ dict(content, response (full JSON), latency_s, attempts, error)."""
-        body = self.body(messages, web)
+    async def chat(self, messages, web=False, max_results=None):
+        """→ dict(content, response (full JSON), latency_s, attempts, error). max_results overrides web.max_results."""
+        body = self.body(messages, web, max_results)
         if self.dry_run:
             return {"content": fake_reply(messages, web), "response": {"dry_run": True}, "latency_s": 0.0,
                     "attempts": 1, "error": None, "request": {k: v for k, v in body.items() if k != "messages"}}
@@ -107,6 +107,10 @@ def fake_reply(messages, web=False):
     rnd = random.Random(hash(last) % 10 ** 9)
     if web:
         return "- Prices still rising a bit.\n- Job market cooling.\n- Rates on hold."
+    if "QUERY:" in last:
+        return "QUERY: grocery prices in my state this month\nQUERY: layoffs in my industry"
+    if "What your search found" in last:
+        return "- Groceries cost more.\n- Some layoffs nearby."
     if "add up to" in last and "all ten again" in last.lower():
         return "\n".join(f"BIN{i}: {v}" for i, v in enumerate([2, 5, 13, 30, 30, 10, 5, 3, 1, 1], 1))
     if "BIN1:" in last:

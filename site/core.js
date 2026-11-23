@@ -6,9 +6,9 @@
   S.current = 'overview';
   S.state = { item: 'Q8v2part2', stat: 'median', view: 'mtd', arms: null, person: null, sort: 'interview_day', sortDir: 1 };
 
-  const ARM_ORDER = ['A_noweb_nomemory', 'B_web_nomemory', 'C_noweb_memory', 'D_web_memory'];
+  const ARM_ORDER = ['A_noweb_nomemory', 'B_web_nomemory', 'C_noweb_memory', 'D_web_memory', 'E_customweb_nomemory'];
   S.ARM_ORDER = ARM_ORDER;
-  S.armShort = (a) => ({ A_noweb_nomemory: 'A', B_web_nomemory: 'B', C_noweb_memory: 'C', D_web_memory: 'D' }[a] || a);
+  S.armShort = (a) => ({ A_noweb_nomemory: 'A', B_web_nomemory: 'B', C_noweb_memory: 'C', D_web_memory: 'D', E_customweb_nomemory: 'E' }[a] || a);
   S.armName = (a) => {
     const d = S.get('arms');
     const r = d.ok ? d.rows.find((x) => x.arm === a) : null;

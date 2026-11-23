@@ -1,5 +1,7 @@
 """One interview: one persona, one arm, one conversation, the whole monthly questionnaire."""
+import asyncio
 import json
+import re
 from datetime import datetime, timezone
 
 from .persona import system_prompt
@@ -36,6 +38,25 @@ def _annotations(res):
             seen.add(a["url"])
             uniq.append(a)
     return uniq
+
+
+def parse_queries(text, k, chars):
+    """The persona's searches: lines starting with QUERY: (at most k, each at most chars long, no repeats)."""
+    out = []
+    for m in re.finditer(r"^\s*(?:[-*\d.)\s]*)QUERY\s*:\s*(.+?)\s*$", text or "", re.M | re.I):
+        q = m.group(1).strip().strip('"\'“”').strip()[:chars].strip()
+        if q and q.lower() not in {x.lower() for x in out}:
+            out.append(q)
+    return out[:k]
+
+
+def split_results(total, k):
+    """10 results over 3 searches → [4, 3, 3]."""
+    return [total // k + (1 if i < total % k else 0) for i in range(k)]
+
+
+def paste_results(web_results, n):
+    return "\n\n".join(f"[{i}] {r['title']} ({r['url']})\n{r['content'][:n].strip()}" for i, r in enumerate(web_results, 1))
 
 
 def memory_block(cfg, history):
@@ -81,7 +102,58 @@ async def run_interview(ctx, row, arm, scheduled, run_date, respondent_type, mem
     # web search: once, before the survey starts
     w = cfg["web"]
     web_results, web_cost = [], 0.0
-    if arm["web"] and w.get("scope", "interview") == "interview":
+    web_queries, queries_fallback = [], False
+    custom = arm["web"] and arm.get("web_mode") == "custom"
+    if custom:
+        # 1) the persona writes its own searches (a normal turn of the conversation)
+        cw = w.get("custom") or {}
+        k = max(1, int(cw.get("max_queries", 3)))
+        opening = qn.fill(cw.get("query_prompt", "Today's date is {DATE}. What would you look up in today's news? "
+                                                 "Write 1 to 3 web searches, one per line, each starting with \"QUERY:\"."),
+                          run_date).strip()
+        if arm["memory"] and memory and mem_mode == "thread":
+            opening = "\n\n".join(lead + [opening])
+            lead = []
+        messages.append({"role": "user", "content": opening})
+        res, u = await call("WEB_QUERIES")
+        web_cost += u["cost_usd"] or 0
+        if res["content"]:
+            messages.append({"role": "assistant", "content": res["content"]})
+        web_queries = parse_queries(res["content"], k, int(cw.get("query_chars", 150)))
+        if not web_queries:                       # unreadable reply: fall back to the generic news search
+            queries_fallback = True
+            web_queries = [qn.fill(w.get("prompt", "Latest U.S. economy news as of {DATE}."), run_date).strip().splitlines()[0]]
+            if not res["content"]:
+                messages.append({"role": "assistant", "content": "(no searches written)"})
+
+        # 2) each search runs on its own: only the search text is sent, so the engine searches exactly that
+        async def search(i, q, n):
+            r = await llm.chat([{"role": "user", "content": q}], web=True, max_results=n)
+            uu = _usage(r)
+            calls.append({"n": len(calls) + 1, "question_id": f"WEB{i}", "web": True, "user": q, "reply": r["content"],
+                          "error": r["error"], "latency_s": r["latency_s"], "attempts": r["attempts"],
+                          "request_params": r.get("request"), "response": r["response"]})
+            return r, uu
+        found = await asyncio.gather(*(search(i, q, n) for i, (q, n) in
+                                       enumerate(zip(web_queries, split_results(int(w.get("max_results", 10)), len(web_queries))), 1)))
+        seen = set()
+        for (r, uu), q in zip(found, web_queries):
+            web_cost += uu["cost_usd"] or 0
+            for a in _annotations(r):
+                if a["url"] not in seen:
+                    seen.add(a["url"])
+                    web_results.append({**a, "query": q})
+
+        # 3) the results go into the conversation; the persona notes what matters to it
+        n = int(w.get("result_chars", 1000))
+        pasted = paste_results(web_results, n) if any(r["content"] for r in web_results) else "(the search found nothing)"
+        read = qn.fill(cw.get("read_prompt", "What your search found:\n\n{RESULTS}\n\nWrite 3 to 5 short bullet points on "
+                                             "what you learned that matters to you."), run_date, extra={"RESULTS": pasted})
+        messages.append({"role": "user", "content": read.strip()})
+        res, u = await call("WEB")
+        web_cost += u["cost_usd"] or 0
+        messages.append({"role": "assistant", "content": res["content"] or "(no notes)"})
+    elif arm["web"] and w.get("scope", "interview") == "interview":
         # only the news request goes in this turn (the search engine reads it as the query);
         # memory, if any, comes with the first question
         opening = qn.fill(w.get("prompt", "Latest U.S. economy news as of {DATE}."), run_date).strip()
@@ -94,8 +166,7 @@ async def run_interview(ctx, row, arm, scheduled, run_date, respondent_type, mem
         web_results = _annotations(res)
         if w.get("keep_results_in_conversation", True) and any(r["content"] for r in web_results):
             n = int(w.get("result_chars", 1000))
-            pasted = "\n\n".join(f"[{i}] {r['title']} ({r['url']})\n{r['content'][:n].strip()}"
-                                 for i, r in enumerate(web_results, 1))
+            pasted = paste_results(web_results, n)
             messages[-1]["content"] = opening + "\n\nWhat the search found:\n\n" + pasted
         messages.append({"role": "assistant", "content": res["content"] or "(no search results)"})
 
@@ -111,7 +182,7 @@ async def run_interview(ctx, row, arm, scheduled, run_date, respondent_type, mem
         user = "\n\n".join(lead + intros + [qn.render(q, run_date, answers)])
         lead, intros = [], []
         messages.append({"role": "user", "content": user})
-        res, u = await call(q["id"], web=arm["web"] and w.get("scope") == "question")
+        res, u = await call(q["id"], web=arm["web"] and not custom and w.get("scope") == "question")
         raw = res["content"]
         parsed = parse_answer(q, raw) if raw else None
         first = None
@@ -164,7 +235,8 @@ async def run_interview(ctx, row, arm, scheduled, run_date, respondent_type, mem
                   "memory_waves": " ".join(memory_waves), "model": cfg["model"], "temperature": cfg.get("temperature")}
     log_record = {**ledger_row, "settings": {k: cfg.get(k) for k in ("model", "temperature", "max_tokens", "top_p",
                                                                      "reasoning", "provider", "reask", "density_reask", "age_moves_with_date")},
-                  "web_settings": w if arm["web"] else None,
+                  "web_settings": ({**w, "mode": arm.get("web_mode")} if arm["web"] else None),
+                  "web_queries": web_queries, "web_queries_fallback": queries_fallback,
                   "memory_settings": cfg["memory"] if arm["memory"] else None,
                   "persona": {k: v for k, v in row.items() if k != "persona_preview"},
                   "system_prompt": sys, "web_results": web_results, "answers": answers,

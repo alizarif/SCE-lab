@@ -5,7 +5,7 @@ from collections import Counter
 
 import pandas as pd
 
-from .config import ROOT, log, setup_logging
+from .config import ROOT, arms_for, log, setup_logging
 from .interview import run_interview
 from .llm import LLM, Fatal
 from .questionnaire import Questionnaire
@@ -27,10 +27,10 @@ def due_today(cfg, people, run_date, arms=None):
     plan = month_plan(cfg, list(people), run_date.year, run_date.month)
     wave = wave_of(run_date)
     done = done_keys()
-    arms = arms or cfg["arms"]
+    arms = [a for a in (arms or cfg["arms"]) if a in arms_for(cfg, wave)]
     todo = [(d, a["id"], u) for u, d in plan.items() if d <= run_date for a in arms if (u, a["id"], wave) not in done]
     order = {a["id"]: i for i, a in enumerate(arms)}
-    return sorted(todo, key=lambda t: (t[0], t[2], order[t[1]])), plan     # each person's four arms together
+    return sorted(todo, key=lambda t: (t[0], t[2], order[t[1]])), plan     # each person's arms together
 
 
 def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
@@ -47,9 +47,9 @@ def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
         log.info("end_date %s has passed → the survey is finished (set a later end_date to continue)", cfg["end_date"])
         return 0
     people = load_participants(cfg)
-    arms = [a for a in cfg["arms"] if not arm_ids or a["id"] in arm_ids]
-    todo, plan = due_today(cfg, people, run_date, arms)
     wave = wave_of(run_date)
+    arms = [a for a in arms_for(cfg, wave) if not arm_ids or a["id"] in arm_ids]
+    todo, plan = due_today(cfg, people, run_date, arms)
     n_today = sum(1 for d in plan.values() if d == run_date)
     late = sum(1 for d, _, _ in todo if d < run_date)
     log.info("wave %s · %d participants · %d scheduled today · %d arms · %d interviews to do (%d left over from earlier days)",
@@ -64,6 +64,7 @@ def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
     lg = ledger()
     lg = lg[(lg["status"] == "complete") & (lg["wave"] < wave)]
     seen_before = {(int(u), str(a)) for u, a in zip(lg["userid"], lg["arm"])}
+    seen_any = {int(u) for u in lg["userid"]}          # for arms that start later (start_wave): any arm counts
     mem_arms = [a["id"] for a in arms if a["memory"]]
     mem = {}
     if mem_arms:
@@ -96,7 +97,8 @@ def run_daily(cfg, run_date=None, dry_run=False, limit=None, arm_ids=None):
                     stats["postponed"] += 1
                     return
                 arm = arm_by[arm_id]
-                rt = rtype if rtype in ("new", "repeat") else ("repeat" if (uid, arm_id) in seen_before else "new")
+                before = (uid, arm_id) in seen_before or (arm.get("start_wave") and uid in seen_any)
+                rt = rtype if rtype in ("new", "repeat") else ("repeat" if before else "new")
                 try:
                     led, rows, rec = await run_interview(ctx, people[uid], arm, sched, run_date, rt,
                                                          mem.get((uid, arm_id)) if arm["memory"] else None)

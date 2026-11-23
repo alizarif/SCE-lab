@@ -19,7 +19,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from sce_survey.config import DATA, load_config            # noqa: E402
+from sce_survey.config import DATA, arms_for, load_config            # noqa: E402
 from sce_survey.questionnaire import Questionnaire          # noqa: E402
 from sce_survey.report import long_values                   # noqa: E402
 from sce_survey.schedule import month_plan, survey_days, today, wave_of   # noqa: E402
@@ -29,7 +29,8 @@ OUT = ROOT / "dashboard" / "data"
 SAMPLE_GLOB = "sample/sample_all_interviews_*.csv"
 
 ARM_NAMES = {"A_noweb_nomemory": "A · no web, no memory", "B_web_nomemory": "B · web, no memory",
-             "C_noweb_memory": "C · no web, memory", "D_web_memory": "D · web, memory"}
+             "C_noweb_memory": "C · no web, memory", "D_web_memory": "D · web, memory",
+             "E_customweb_nomemory": "E · own web search, no memory"}
 
 # Items the dashboard follows day by day, per person and against the real SCE answers.
 KEY = ["Q8v2part2", "Q9bv2part2", "Q1apart2", "Q9_binmean", "Q9c_binmean", "Q9new2_binmean",
@@ -208,6 +209,38 @@ def news(cfg, waves_keep=2):
     return out
 
 
+def queries(cfg, waves_keep):
+    """What the personas of the custom-web arms searched for: one row per day, arm and search (same text, any case)."""
+    out = []
+    custom = {a["id"] for a in cfg["arms"] if a.get("web_mode") == "custom"}
+    for f in sorted((DATA / "logs").glob("*/*.jsonl.gz")):
+        if f.parent.name not in waves_keep:
+            continue
+        day, arm = f.stem.replace(".jsonl", "").split("_", 1)
+        if arm not in custom:
+            continue
+        cnt, text, n_int, n_fb = Counter(), {}, 0, 0
+        with gzip.open(f, "rt") as fh:
+            for line in fh:
+                try:
+                    rec = json.loads(line)
+                except ValueError:
+                    continue
+                n_int += 1
+                if rec.get("web_queries_fallback"):
+                    n_fb += 1
+                    continue
+                for q in rec.get("web_queries") or []:
+                    k = " ".join(q.lower().split())
+                    cnt[k] += 1
+                    text.setdefault(k, " ".join(q.split())[:150])
+        for k, n in cnt.most_common(40):
+            out.append({"date": day, "arm": arm, "query": text[k], "interviews": n,
+                        "share": round(n / n_int, 3) if n_int else None, "interviews_day": n_int,
+                        "searches_day": int(sum(cnt.values())), "distinct_day": len(cnt), "fallback_day": n_fb})
+    return out
+
+
 def main():
     cfg = load_config()
     qn = Questionnaire(cfg.get("questionnaire_file"))
@@ -279,6 +312,7 @@ def main():
         plan = month_plan(cfg, ids, yy, mm)
         w = f"{yy:04d}-{mm:02d}"
         per = Counter(plan.values())
+        n_arms = len(arms_for(cfg, w))
         did = Counter(plan[u] for u in plan if (u, w) in done)
         if not lg.empty:
             per_arm_done = lg[(lg["wave"].astype(str) == w) & (lg["status"] == "complete")].groupby("scheduled_date").size()
@@ -286,9 +320,9 @@ def main():
             per_arm_done = pd.Series(dtype=int)
         for d in survey_days(cfg, yy, mm):
             sched.append({"date": d.isoformat(), "wave": w, "people": per.get(d, 0),
-                          "interviews_planned": per.get(d, 0) * len(arms),
+                          "interviews_planned": per.get(d, 0) * n_arms,
                           "interviews_done": int(per_arm_done.get(d.isoformat(), 0)),
-                          "status": "done" if per_arm_done.get(d.isoformat(), 0) >= per.get(d, 0) * len(arms) > 0
+                          "status": "done" if per_arm_done.get(d.isoformat(), 0) >= per.get(d, 0) * n_arms > 0
                           else ("due" if d <= run_day else "upcoming")})
     sizes["schedule"] = write("schedule", sched)
 
@@ -298,11 +332,11 @@ def main():
     last = lg[lg["run_date"] == last_run] if last_run else lg
     status = [{
         "generated_utc": now, "today": run_day.isoformat(), "wave": cur_wave, "model": cfg["model"],
-        "participants": len(people), "arms": len(arms),
+        "participants": len(people), "arms": len(arms_for(cfg, cur_wave)),
         "interviews_total": int(len(lg)), "people_total": int(lg["userid"].nunique()) if not lg.empty else 0,
         "cost_total": round(float(lg["cost_usd"].fillna(0).sum()), 2) if not lg.empty else 0.0,
         "interviews_month": int(len(cur)), "people_month": int(cur["userid"].nunique()) if len(cur) else 0,
-        "interviews_month_target": len(people) * len(arms),
+        "interviews_month_target": len(people) * len(arms_for(cfg, cur_wave)),
         "cost_month": round(float(cur["cost_usd"].fillna(0).sum()), 2) if len(cur) else 0.0,
         "last_run_date": last_run, "interviews_last_run": int(len(last)),
         "cost_last_run": round(float(last["cost_usd"].fillna(0).sum()), 2) if len(last) else 0.0,
@@ -473,8 +507,11 @@ def main():
     # ---------- news the web arms read ----------
     sizes["news"] = write("news", news(cfg, set(keep_waves[-1:]) if keep_waves else set()))
 
+    sizes["queries"] = write("queries", queries(cfg, set(keep_waves[-1:]) if keep_waves else set()))
+
     sizes["arms"] = write("arms", [{"arm": a["id"], "name": ARM_NAMES.get(a["id"], a["id"]), "web": bool(a["web"]),
-                                    "memory": bool(a["memory"])} for a in cfg["arms"]])
+                                    "memory": bool(a["memory"]), "web_mode": a.get("web_mode") or "",
+                                    "start_wave": a.get("start_wave") or ""} for a in cfg["arms"]])
     total = sum(sizes.values())
     for k, v in sorted(sizes.items()):
         print(f"{k:18s} {v / 1024:9.1f} KB")

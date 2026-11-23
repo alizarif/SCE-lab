@@ -115,7 +115,7 @@
       <span class="dash-skeleton" data-source="status" data-field="people_month" data-row="0">—</span> of
       <span data-source="status" data-field="participants" data-row="0">—</span> people have taken
       <span id="take-month">this month's</span> survey so far
-      (<span data-source="status" data-field="interviews_month" data-row="0">—</span> interviews across the four versions).
+      (<span data-source="status" data-field="interviews_month" data-row="0">—</span> interviews across all versions).
       <span id="take-infl" hidden>Median one-year inflation expectation:
         <b id="take-b" data-source="stats_monthly" data-field="median">—</b> with web search vs
         <b id="take-a" data-source="stats_monthly" data-field="median">—</b> without.</span>
@@ -162,7 +162,7 @@
       <div class="sce-tile-label">Interviews this month</div>
       <div class="sce-big" data-source="status" data-field="interviews_month" data-row="0">—</div>
       <div class="sce-bar"><i id="ov-prog"></i></div>
-      <div class="sce-sub">of <span data-source="status" data-field="interviews_month_target" data-row="0">—</span> planned (every person, four versions)</div>
+      <div class="sce-sub">of <span data-source="status" data-field="interviews_month_target" data-row="0">—</span> planned (every person, every version)</div>
     </div>
     <div class="sce-tile" id="tile-people">
       <div class="sce-tile-label">People interviewed this month</div>
@@ -192,14 +192,14 @@
     </div>
     <div class="sce-card" id="ov-cal-card">
       <h3>Interview calendar</h3>
-      <p class="sce-note">Each person gets one random day a month and answers all four versions that day. Green: done. Amber: due but not done yet.</p>
+      <p class="sce-note">Each person gets one random day a month and answers every version that day. Green: done. Amber: due but not done yet.</p>
       <div id="ov-cal" data-source="schedule"></div>
     </div>
   </div>
 
   <div class="sce-section" id="ov-headlines">
     <h2 class="sce-h2">This month at a glance</h2>
-    <p class="sce-lede">Each row is one question. Dots are the four versions of the survey this month; the grey tick is the same 1,200 people's real SCE answers in their latest year in the survey panel, for comparison.</p>
+    <p class="sce-lede">Each row is one question. Dots are the versions of the survey this month; the grey tick is the same 1,200 people's real SCE answers in their latest year in the survey panel, for comparison.</p>
     <div class="sce-legend" id="ov-legend2"></div>
     <div class="sce-grid-wide">
       <div class="sce-card" id="ov-forecasts">
@@ -238,7 +238,7 @@
 
 <!-- ============ Web & memory ============ -->
 <template id="tpl-arms">
-  <p class="sce-lede">The survey runs in four versions, a 2×2 design. <b>Web</b>: before the survey, the persona reads the top 10 web search results for today's U.S. economic news. <b>Memory</b>: the persona sees its own answers from earlier months. Every person answers all four versions on the same day, so the differences below compare the same people.</p>
+  <p class="sce-lede">The survey runs in a 2×2 design plus one more version. <b>Web</b>: before the survey, the persona reads the top 10 web search results for today's U.S. economic news. <b>Memory</b>: the persona sees its own answers from earlier months. <b>Own web search</b> (version E, from December 2026): the persona first writes its own searches, about what matters in its own life, and reads the top 10 results of those instead. Every person answers every version on the same day, so the differences below compare the same people.</p>
   <div class="sce-controls">
     <label class="sce-field">Month<select id="ar-wave"></select></label>
   </div>
@@ -253,6 +253,11 @@
       <p class="sce-note">Memory minus no memory. Filled dot: without web (C − A). Open dot: with web (D − B). Memory only starts to matter from the second month, when there are earlier answers to remember.</p>
       <div class="sce-chart sce-tall" id="ar-mem" data-source="effects"></div>
     </div>
+  </div>
+  <div class="sce-card" id="ar-own-card">
+    <h3>Effect of choosing your own searches</h3>
+    <p class="sce-note">Own searches minus the common news search, both without memory (E − B), in percentage points. Same engine and the same 10 results per interview; only who decides what to search for differs.</p>
+    <div class="sce-chart sce-tall" id="ar-own" data-source="effects"></div>
   </div>
   <div class="sce-card" id="ar-matrix-card">
     <div class="sce-controls"><label class="sce-field">Question<select id="ar-item"></select></label></div>
@@ -330,7 +335,7 @@
 
 <!-- ============ News ============ -->
 <template id="tpl-news">
-  <p class="sce-lede">Versions B and D start each interview with a web search for today's U.S. economic news (10 results per interview). These are the pages the personas read, counted over that day's interviews.</p>
+  <p class="sce-lede">Versions B and D start each interview with the same web search for today's U.S. economic news (10 results per interview). In version E each persona writes its own searches (1 to 3, sharing the same 10 results). These are the pages the personas read, counted over that day's interviews.</p>
   <div class="sce-controls">
     <label class="sce-field">Day<select id="nw-date"></select></label>
     <label class="sce-field">Version<select id="nw-arm"></select></label>
@@ -342,9 +347,14 @@
     </div>
     <div class="sce-card">
       <h3>Sources this month</h3>
-      <p class="sce-note">Search results per news site, all days and both web versions.</p>
+      <p class="sce-note">Search results per news site, all days and all web versions.</p>
       <div class="sce-chart sce-tall" id="nw-dom" data-source="news_domains"></div>
     </div>
+  </div>
+  <div class="sce-card" id="nw-queries-card">
+    <h3>What the personas searched for</h3>
+    <p class="sce-note" id="nw-q-note">Version E: the searches the personas wrote that day, before reading the news.</p>
+    <div class="sce-tablebox"><table class="sce-table" id="nw-q-table" data-source="queries"><thead><tr><th>Search</th><th class="sce-num">Interviews</th></tr></thead><tbody></tbody></table></div>
   </div>
 </template>
 
@@ -387,12 +397,13 @@
       <p>A random draw of <span data-source="status" data-field="participants" data-row="0">—</span> people who joined the real SCE panel between 2016 and 2025 (seed 2222). Each persona is written from the person's own answers in their first SCE interview: age, gender, education, work, home, household, income, state and commuting zone, risk attitudes and numeracy test answers. The Panel page shows the mix of people.</p>
       <h3>When</h3>
       <p>Every month each person is interviewed once, on a day drawn at random for that month, so the panel is spread evenly over the month (about 40 people a day). A new draw each month means someone interviewed on the 5th this month can land on any day next month. The first month, which began on <span data-source="status" data-field="start_date" data-row="0">—</span>, was spread over the days left in it.</p>
-      <h3>Four versions</h3>
+      <h3>Versions</h3>
       <ul>
         <li><b>A</b>: no web search, no memory.</li>
         <li><b>B</b>: reads the top <span data-source="status" data-field="web_results" data-row="0">—</span> web search results for that day's economic news, no memory.</li>
         <li><b>C</b>: no web search; sees a summary of its own answers from earlier months.</li>
         <li><b>D</b>: both.</li>
+        <li><b>E</b> (from December 2026): own web search, no memory. Before the survey the persona writes 1 to 3 searches about what matters in its own life; the same search engine returns the same total of <span data-source="status" data-field="web_results" data-row="0">—</span> results, split across them. Compare with B: only the choice of searches differs.</li>
       </ul>
       <h3>Model</h3>
       <p><span data-source="status" data-field="model" data-row="0">—</span> through OpenRouter, reasoning effort <span data-source="status" data-field="reasoning" data-row="0">—</span>, up to <span data-source="status" data-field="concurrency" data-row="0">—</span> interviews at once. Each interview is one conversation: the persona is the system message and each question is a new turn.</p>

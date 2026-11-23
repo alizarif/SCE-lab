@@ -207,7 +207,8 @@ def make_report(cfg):
     cur = waves[-1]
     lines = [f"# SCE monthly survey · report", "",
              f"Updated {datetime.now():%Y-%m-%d %H:%M} · model `{cfg['model']}` · arms: " +
-             ", ".join(f"`{a['id']}` (web {'on' if a['web'] else 'off'}, memory {'on' if a['memory'] else 'off'})"
+             ", ".join(f"`{a['id']}` (web {('own searches' if a.get('web_mode') == 'custom' else 'on') if a['web'] else 'off'}, "
+                       f"memory {'on' if a['memory'] else 'off'}{', from ' + a['start_wave'] if a.get('start_wave') else ''})"
                        for a in cfg["arms"]), ""]
     if not lg.empty:
         prog = lg[lg["status"] == "complete"].groupby(["wave", "arm"]).agg(
