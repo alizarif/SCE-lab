@@ -8,3 +8,5 @@
 2026-11-25 13:11:53 INFO … 125 / 160 interviews done · $0.88 so far
 2026-11-25 13:12:33 INFO … 150 / 160 interviews done · $1.06 so far
 2026-11-25 13:13:09 INFO finished: 160 interviews done, 0 failed, 0 postponed to the next run · 0 question errors · cost $1.1516 · 5.1 min
+2026-11-25 21:36:17 INFO === SCE monthly survey · run date 2026-11-25 · model openai/gpt-6-luna ===
+2026-11-25 21:36:18 INFO wave 2026-11 · 1200 participants · 40 scheduled today · 4 arms · 0 interviews to do (0 left over from earlier days)
